@@ -1,0 +1,290 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\storemanagement\\views\\startviews\\addnewuserview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|solutionrelative:storemanagement\\views\\startviews\\addnewuserview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\storemanagement\\views\\startviews\\addnewuserview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|solutionrelative:storemanagement\\views\\startviews\\addnewuserview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\storemanagement\\views\\startviews\\addnewuserview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|solutionrelative:storemanagement\\views\\startviews\\addnewuserview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\storemanagement\\views\\startviews\\iaddnewuserview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|solutionrelative:storemanagement\\views\\startviews\\iaddnewuserview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\storemanagement\\views\\startviews\\iloginview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|solutionrelative:storemanagement\\views\\startviews\\iloginview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|c:\\users\\marta\\onedrive - biurox365ml\\pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\storemanagement\\storemanagement\\presenters\\addnewuserpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|solutionrelative:storemanagement\\presenters\\addnewuserpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\storemanagement\\dal\\dbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|solutionrelative:storemanagement\\dal\\dbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\storemanagement\\dal\\repositories\\clothesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|solutionrelative:storemanagement\\dal\\repositories\\clothesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\storemanagement\\dal\\repositories\\ordersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|solutionrelative:storemanagement\\dal\\repositories\\ordersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\storemanagement\\dal\\repositories\\usersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|solutionrelative:storemanagement\\dal\\repositories\\usersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\storemanagement\\models\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|solutionrelative:storemanagement\\models\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\storemanagement\\dal\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|solutionrelative:storemanagement\\dal\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\storemanagement\\views\\workerviews\\workeraddproductview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|solutionrelative:storemanagement\\views\\workerviews\\workeraddproductview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\storemanagement\\views\\workerviews\\workeraddproductview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|solutionrelative:storemanagement\\views\\workerviews\\workeraddproductview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\storemanagement\\views\\startviews\\loginview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|solutionrelative:storemanagement\\views\\startviews\\loginview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\storemanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|solutionrelative:storemanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Model.cs",
+              "DocumentMoniker": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Models\\Model.cs",
+              "RelativeDocumentMoniker": "StoreManagement\\Models\\Model.cs",
+              "ToolTip": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Models\\Model.cs",
+              "RelativeToolTip": "StoreManagement\\Models\\Model.cs",
+              "ViewState": "AQIAAEkAAAAAAAAAAAAcwAYAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T22:03:14.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UsersRepository.cs",
+              "DocumentMoniker": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\DAL\\Repositories\\UsersRepository.cs",
+              "RelativeDocumentMoniker": "StoreManagement\\DAL\\Repositories\\UsersRepository.cs",
+              "ToolTip": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\DAL\\Repositories\\UsersRepository.cs",
+              "RelativeToolTip": "StoreManagement\\DAL\\Repositories\\UsersRepository.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAAwDgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T22:02:53.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OrdersRepository.cs",
+              "DocumentMoniker": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\DAL\\Repositories\\OrdersRepository.cs",
+              "RelativeDocumentMoniker": "StoreManagement\\DAL\\Repositories\\OrdersRepository.cs",
+              "ToolTip": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\DAL\\Repositories\\OrdersRepository.cs",
+              "RelativeToolTip": "StoreManagement\\DAL\\Repositories\\OrdersRepository.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAACkAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T22:02:42.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ClothesRepository.cs",
+              "DocumentMoniker": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\DAL\\Repositories\\ClothesRepository.cs",
+              "RelativeDocumentMoniker": "StoreManagement\\DAL\\Repositories\\ClothesRepository.cs",
+              "ToolTip": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\DAL\\Repositories\\ClothesRepository.cs",
+              "RelativeToolTip": "StoreManagement\\DAL\\Repositories\\ClothesRepository.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAnwDoAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T22:02:08.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\DAL\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "StoreManagement\\DAL\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\DAL\\Entities\\User.cs",
+              "RelativeToolTip": "StoreManagement\\DAL\\Entities\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T21:57:49.577Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DBConnection.cs",
+              "DocumentMoniker": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\DAL\\DBConnection.cs",
+              "RelativeDocumentMoniker": "StoreManagement\\DAL\\DBConnection.cs",
+              "ToolTip": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\DAL\\DBConnection.cs",
+              "RelativeToolTip": "StoreManagement\\DAL\\DBConnection.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADUAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T21:48:21.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "WorkerAddProductView.cs",
+              "DocumentMoniker": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Views\\WorkerViews\\WorkerAddProductView.cs",
+              "RelativeDocumentMoniker": "StoreManagement\\Views\\WorkerViews\\WorkerAddProductView.cs",
+              "ToolTip": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Views\\WorkerViews\\WorkerAddProductView.cs",
+              "RelativeToolTip": "StoreManagement\\Views\\WorkerViews\\WorkerAddProductView.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T21:27:23.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "WorkerAddProductView.cs [Projekt]",
+              "DocumentMoniker": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Views\\WorkerViews\\WorkerAddProductView.cs",
+              "RelativeDocumentMoniker": "StoreManagement\\Views\\WorkerViews\\WorkerAddProductView.cs",
+              "ToolTip": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Views\\WorkerViews\\WorkerAddProductView.cs [Projekt]",
+              "RelativeToolTip": "StoreManagement\\Views\\WorkerViews\\WorkerAddProductView.cs [Projekt]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T21:27:19.678Z",
+              "EditorCaption": " [Projekt]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddNewUserView.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Views\\StartViews\\AddNewUserView.Designer.cs",
+              "RelativeDocumentMoniker": "StoreManagement\\Views\\StartViews\\AddNewUserView.Designer.cs",
+              "ToolTip": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Views\\StartViews\\AddNewUserView.Designer.cs",
+              "RelativeToolTip": "StoreManagement\\Views\\StartViews\\AddNewUserView.Designer.cs",
+              "ViewState": "AQIAAF4AAAAAAAAAAAArwPgAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T21:27:12.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddNewUserView.cs",
+              "DocumentMoniker": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Views\\StartViews\\AddNewUserView.cs",
+              "RelativeDocumentMoniker": "StoreManagement\\Views\\StartViews\\AddNewUserView.cs",
+              "ToolTip": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Views\\StartViews\\AddNewUserView.cs",
+              "RelativeToolTip": "StoreManagement\\Views\\StartViews\\AddNewUserView.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAMwDgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T21:25:02.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "LoginView.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Views\\StartViews\\LoginView.Designer.cs",
+              "RelativeDocumentMoniker": "StoreManagement\\Views\\StartViews\\LoginView.Designer.cs",
+              "ToolTip": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Views\\StartViews\\LoginView.Designer.cs",
+              "RelativeToolTip": "StoreManagement\\Views\\StartViews\\LoginView.Designer.cs",
+              "ViewState": "AQIAAHsAAAAAAAAAAAAUwGYAAABaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T21:20:03.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ILoginView.cs",
+              "DocumentMoniker": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Views\\StartViews\\ILoginView.cs",
+              "RelativeDocumentMoniker": "StoreManagement\\Views\\StartViews\\ILoginView.cs",
+              "ToolTip": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Views\\StartViews\\ILoginView.cs",
+              "RelativeToolTip": "StoreManagement\\Views\\StartViews\\ILoginView.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T21:10:10.14Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AddNewUserPresenter.cs",
+              "DocumentMoniker": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Presenters\\AddNewUserPresenter.cs",
+              "RelativeDocumentMoniker": "StoreManagement\\Presenters\\AddNewUserPresenter.cs",
+              "ToolTip": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Presenters\\AddNewUserPresenter.cs",
+              "RelativeToolTip": "StoreManagement\\Presenters\\AddNewUserPresenter.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAUwDcAAAB5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T21:06:45.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddNewUserView.cs [Projekt]",
+              "DocumentMoniker": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Views\\StartViews\\AddNewUserView.cs",
+              "RelativeDocumentMoniker": "StoreManagement\\Views\\StartViews\\AddNewUserView.cs",
+              "ToolTip": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Views\\StartViews\\AddNewUserView.cs [Projekt]",
+              "RelativeToolTip": "StoreManagement\\Views\\StartViews\\AddNewUserView.cs [Projekt]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T21:05:52.867Z",
+              "EditorCaption": " [Projekt]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IAddNewUserView.cs",
+              "DocumentMoniker": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Views\\StartViews\\IAddNewUserView.cs",
+              "RelativeDocumentMoniker": "StoreManagement\\Views\\StartViews\\IAddNewUserView.cs",
+              "ToolTip": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Views\\StartViews\\IAddNewUserView.cs",
+              "RelativeToolTip": "StoreManagement\\Views\\StartViews\\IAddNewUserView.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAQwBMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T21:05:28.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Program.cs",
+              "RelativeDocumentMoniker": "StoreManagement\\Program.cs",
+              "ToolTip": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Program.cs",
+              "RelativeToolTip": "StoreManagement\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T20:19:56.29Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
