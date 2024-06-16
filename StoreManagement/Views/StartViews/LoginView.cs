@@ -1,5 +1,6 @@
 ﻿using StoreManagement.Views.StartViews;
 using StoreManagement.Presenters;
+using StoreManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,15 +13,15 @@ using System.Windows.Forms;
 using StoreManagement.Views;
 using StoreManagement.Views;
 
-namespace StoreManagement
+namespace StoreManagement.Views.StartViews
 {
-    public partial class LoginView : Form, ILoginView
+    public partial class LoginView : UserControl, ILoginView
     {
         private LoginPresenter _loginPresenter;
-        public LoginView()
+        public LoginView(Model model)
         {
             InitializeComponent();
-            _loginPresenter = new LoginPresenter(this);
+            _loginPresenter = new LoginPresenter(this, model);
         }
 
         public string Username => textBox_username.Text;
@@ -33,27 +34,33 @@ namespace StoreManagement
 
         public void NavigateToClientView()
         {
-            ClientProductsView clientView = new ClientProductsView();
-            clientView.Show();
-            this.Hide();
+            MainForm mainForm = this.ParentForm as MainForm;
+            if (mainForm != null)
+            {
+                mainForm.ShowUserControl(new ClientProductsView());
+            }
         }
-
         public void NavigateToWorkerView()
         {
-            WorkerAddProductView workerView = new WorkerAddProductView();
-            workerView.Show();
-            this.Hide();
+            MainForm mainForm = this.ParentForm as MainForm;
+            if (mainForm != null)
+            {
+                mainForm.ShowUserControl(new WorkerProductsView());
+            }
         }
-
+        
         private void button_login_Click(object sender, EventArgs e)
         {
             _loginPresenter.Login();
         }
         private void button_create_Click(object sender, EventArgs e)
         {
-            AddNewUserView addNewUserView = new AddNewUserView();
-            addNewUserView.Show();
-            this.Hide();
+            Model model = new Model();
+            MainForm mainForm = this.ParentForm as MainForm;
+            if (mainForm != null)
+            {
+                mainForm.ShowUserControl(new AddNewUserView(model));
+            }
         }
     }
 }

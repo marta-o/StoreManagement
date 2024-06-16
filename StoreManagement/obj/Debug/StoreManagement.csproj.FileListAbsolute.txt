@@ -39,4 +39,4 @@ C:\Users\marta\OneDrive - biurox365ml\Pulpit\studia\sem4\programowanie_obiektowe
 C:\Users\marta\OneDrive - biurox365ml\Pulpit\studia\sem4\programowanie_obiektowe\projekt\StoreManagement\StoreManagement\obj\Debug\StoreMan.B2A7598D.Up2Date
 C:\Users\marta\OneDrive - biurox365ml\Pulpit\studia\sem4\programowanie_obiektowe\projekt\StoreManagement\StoreManagement\obj\Debug\StoreManagement.exe
 C:\Users\marta\OneDrive - biurox365ml\Pulpit\studia\sem4\programowanie_obiektowe\projekt\StoreManagement\StoreManagement\obj\Debug\StoreManagement.pdb
-C:\Users\marta\OneDrive - biurox365ml\Pulpit\studia\sem4\programowanie_obiektowe\projekt\StoreManagement\StoreManagement\obj\Debug\StoreManagement.Views.AddNewUserView.resources
+C:\Users\marta\OneDrive - biurox365ml\Pulpit\studia\sem4\programowanie_obiektowe\projekt\StoreManagement\StoreManagement\obj\Debug\StoreManagement.Views.StartViews.AddNewUserView.resources

@@ -202,7 +202,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1095, 574);
+            this.ClientSize = new System.Drawing.Size(1200, 550);
             this.Controls.Add(this.label_size);
             this.Controls.Add(this.label_price);
             this.Controls.Add(this.label_color);

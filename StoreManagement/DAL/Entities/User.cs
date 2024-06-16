@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace StoreManagement.DAL.Entities
 {
-    internal class User
+    public class User
     {
         #region Properties
         public int? Id { get; set; } 
@@ -22,6 +22,7 @@ namespace StoreManagement.DAL.Entities
         #endregion
 
         #region Constructors
+        public User() { }
         public User(MySqlDataReader reader)
         {
             Id = int.Parse(reader["Id"].ToString());
@@ -33,7 +34,7 @@ namespace StoreManagement.DAL.Entities
             Password = reader["Password"].ToString();
             Type = reader["Type"].ToString();
         }
-        public User(string name, string surname, string address, string phone, string username, string password, string type)
+        /*public User(string name, string surname, string address, string phone, string username, string password, string type)
         {
             Id = null;
             Name = name.Trim();
@@ -62,12 +63,12 @@ namespace StoreManagement.DAL.Entities
         public override string ToString()
         {
             return $"{Name} {Surname}, Address: {Address}, Phone: {Phone}, Username: {Username}, Type: {Type}";
-        }
+        }*/
         public string ToInsert()
         {
             return $"('{Name}', '{Surname}', '{Address}', '{Phone}', '{Username}', '{Password}', '{Type}')";
         }
-        public override bool Equals(object obj)
+        /*public override bool Equals(object obj)
         {
             var user = obj as User;
             if (user is null) return false;
@@ -83,7 +84,7 @@ namespace StoreManagement.DAL.Entities
         public override int GetHashCode()
         {
             return base.GetHashCode();
-        }
+        }*/
         #endregion
     }
 }

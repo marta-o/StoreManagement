@@ -1,4 +1,4 @@
-﻿namespace StoreManagement
+﻿namespace StoreManagement.Views.StartViews
 {
     partial class LoginView
     {
@@ -148,7 +148,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(946, 565);
+            this.ClientSize = new System.Drawing.Size(1200, 550);
             this.Controls.Add(this.maskedTextBox_password);
             this.Controls.Add(this.button_login);
             this.Controls.Add(this.label_password);

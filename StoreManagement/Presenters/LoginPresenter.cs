@@ -1,6 +1,7 @@
 ﻿using StoreManagement.Views.StartViews;
 using StoreManagement.DAL.Entities;
 using StoreManagement.DAL;
+using StoreManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,11 @@ namespace StoreManagement.Presenters
     public class LoginPresenter
     {
         private ILoginView _loginView;
-        public LoginPresenter(ILoginView view)
+        private Model _model;
+        public LoginPresenter(ILoginView view, Model model)
         {
             _loginView = view;
+            _model = model;
         }
 
         public void Login()
@@ -44,7 +47,8 @@ namespace StoreManagement.Presenters
 
         private User ValidateUser(string username, string password)
         {
-            using (var connection = DBConnection.Instance.Connection)
+            return _model.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
+            /*using (var connection = DBConnection.Instance.Connection)
             {
                 var query = "SELECT * FROM Users WHERE Username = @Username AND Password = @Password";
                 using (var command = new MySqlCommand(query, connection))
@@ -61,7 +65,7 @@ namespace StoreManagement.Presenters
                     }
                 }
             }
-            return null;
+            return null;*/
         }
     }
 }

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace StoreManagement.Views
 {
-    public partial class ClientCartView : Form
+    public partial class ClientCartView : UserControl
     {
         public ClientCartView()
         {

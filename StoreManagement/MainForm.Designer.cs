@@ -1,6 +1,6 @@
-﻿namespace StoreManagement.Views
+﻿namespace StoreManagement
 {
-    partial class WorkerEditProductView
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 550);
-            this.Text = "WorkerEditProductView";
+            this.Name = "MainForm";
+            this.Text = "Store Management";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.ResumeLayout(false);
         }
 
         #endregion

@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace StoreManagement.DAL.Entities
 {
-    internal class Clothes
+    public class Clothes
     {
         #region Properties
         public int? Id { get; set; } 
@@ -30,7 +30,7 @@ namespace StoreManagement.DAL.Entities
         #endregion
 
         #region Constructors
-        //tworzy obiekt na podstawie MySQLDataReader
+        public Clothes() { }
         public Clothes(MySqlDataReader reader)
         {
             Id = int.Parse(reader["Id"].ToString());
@@ -41,7 +41,7 @@ namespace StoreManagement.DAL.Entities
             Price = uint.Parse(reader["Price"].ToString());
             Amount = uint.Parse(reader["Amount"].ToString());
         }
-        //konstruktor tworzacy obiekt nie dodany jeszcze do bazy z id pustym
+        /*//konstruktor tworzacy obiekt nie dodany jeszcze do bazy z id pustym
         public Clothes(string name, string category, string size, string colour, uint price, uint amount)
         {
             Id = null;
@@ -70,14 +70,14 @@ namespace StoreManagement.DAL.Entities
         public override string ToString()
         {
             return $"{Name} ({Category}) - Size: {Size}, Colour: {Colour}, Price: ${Price}, Amount: {Amount}";
-        }
+        }*/
         //metoda generuje string dla INSERT INTO (Name, Category, Size, Colour, Price, Amount)
         public string ToInsert()
         {
             return $"('{Name}', '{Category}', '{Size}', '{Colour}', {Price}, {Amount})";
         }
         //dzięki przeciążeniu tej metody Contains w liście sprawdzi czy dany obiekt do niej należy
-        public override bool Equals(object obj)
+        /*public override bool Equals(object obj)
         {
             var clothes = obj as Clothes;
             if (clothes is null) return false;
@@ -92,7 +92,7 @@ namespace StoreManagement.DAL.Entities
         public override int GetHashCode()
         {
             return base.GetHashCode();
-        }
+        }*/
         #endregion
     }
 }

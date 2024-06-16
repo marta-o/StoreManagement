@@ -105,31 +105,37 @@
     <Compile Include="DAL\Repositories\ClothesRepository.cs" />
     <Compile Include="DAL\Repositories\OrdersRepository.cs" />
     <Compile Include="DAL\Repositories\UsersRepository.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Model.cs" />
     <Compile Include="Presenters\AddNewUserPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\ClientViews\ClientCartView.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\ClientViews\ClientCartView.Designer.cs">
       <DependentUpon>ClientCartView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ClientViews\ClientOrdersView.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\ClientViews\ClientOrdersView.Designer.cs">
       <DependentUpon>ClientOrdersView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ClientViews\ClientProductsView.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\ClientViews\ClientProductsView.Designer.cs">
       <DependentUpon>ClientProductsView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\StartViews\AddNewUserView.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\StartViews\AddNewUserView.Designer.cs">
       <DependentUpon>AddNewUserView.cs</DependentUpon>
@@ -137,37 +143,37 @@
     <Compile Include="Views\StartViews\IAddNewUserView.cs" />
     <Compile Include="Views\StartViews\ILoginView.cs" />
     <Compile Include="Views\StartViews\LoginView.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\StartViews\LoginView.Designer.cs">
       <DependentUpon>LoginView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\WorkerViews\WorkerAddProductView.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\WorkerViews\WorkerAddProductView.Designer.cs">
       <DependentUpon>WorkerAddProductView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\WorkerViews\WorkerAddUserView.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\WorkerViews\WorkerAddUserView.Designer.cs">
       <DependentUpon>WorkerAddUserView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\WorkerViews\WorkerEditProductView.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\WorkerViews\WorkerEditProductView.Designer.cs">
       <DependentUpon>WorkerEditProductView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\WorkerViews\WorkerOrdersView.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\WorkerViews\WorkerOrdersView.Designer.cs">
       <DependentUpon>WorkerOrdersView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\WorkerViews\WorkerProductsView.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\WorkerViews\WorkerProductsView.Designer.cs">
       <DependentUpon>WorkerProductsView.cs</DependentUpon>

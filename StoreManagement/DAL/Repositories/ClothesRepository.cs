@@ -14,7 +14,7 @@ namespace StoreManagement.DAL.Repositories
         {
             List<Clothes> clothes = new List<Clothes>();
 
-            using (var connection = DBConnection.Instance.Connection)
+            using (var connection = DBConnection.Instance.CreateConnection())
             {
                 string ALL_CLOTHES = "SELECT * FROM clothes";
                 MySqlCommand command = new MySqlCommand(ALL_CLOTHES, connection);
@@ -29,9 +29,19 @@ namespace StoreManagement.DAL.Repositories
 
         public static bool AddNewClothesToDB(Clothes clothes)
         {
-            bool state = false;
+            using (var connection = DBConnection.Instance.CreateConnection())
+            {
+                string query = "INSERT INTO Clothes (Name, Category, Size, Colour, Price, Amount) VALUES " + clothes.ToInsert();
+                MySqlCommand command = new MySqlCommand(query, connection);
+                connection.Open();
+                var result = command.ExecuteNonQuery();
+                connection.Close();
+                return result > 0;
+            }
+            /*bool state = false;
             using (var connection = DBConnection.Instance.Connection)
             {
+
                 string ADD_CLOTHES = "INSERT INTO clothes (Name, Category, Size, Colour, Price, Amount) VALUES ";
                 MySqlCommand command = new MySqlCommand($"{ADD_CLOTHES} {clothes.ToInsert()}", connection);
                 connection.Open();
@@ -41,10 +51,10 @@ namespace StoreManagement.DAL.Repositories
                 clothes.Id = (int)command.LastInsertedId;
                 connection.Close();
             }
-            return state;
+            return state;*/
         }
 
-        public static bool EditClothesInDB(Clothes clothes, int idClothes)
+        /*public static bool EditClothesInDB(Clothes clothes, int idClothes)
         {
             bool state = false;
             using (var connection = DBConnection.Instance.Connection)
@@ -65,6 +75,6 @@ namespace StoreManagement.DAL.Repositories
         {
             //nie wiem co tu ma byc na razie
             return true;
-        }
+        }*/
     }
 }

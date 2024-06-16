@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace StoreManagement.DAL.Entities
 {
-    internal class Order
+    public class Order
     {
         #region Properties
         public int? Id { get; set; }
@@ -20,15 +20,16 @@ namespace StoreManagement.DAL.Entities
         public int? Thing5 { get; set; }
 
         // Możemy także zdefiniować właściwości nawigacyjne, jeśli chcemy
-        public User Client { get; set; }
+        /*public User Client { get; set; }
         public Clothes Item1 { get; set; }
         public Clothes Item2 { get; set; }
         public Clothes Item3 { get; set; }
         public Clothes Item4 { get; set; }
-        public Clothes Item5 { get; set; }
+        public Clothes Item5 { get; set; }*/
         #endregion
 
         #region Constructors
+        public Order() { }
         public Order(MySqlDataReader reader)
         {
             Id = int.Parse(reader["Id"].ToString());
@@ -41,7 +42,7 @@ namespace StoreManagement.DAL.Entities
             Thing5 = reader["Thing5"] == DBNull.Value ? (int?)null : int.Parse(reader["Thing5"].ToString());
         }
 
-        public Order(DateTime orderDate, int idClient, int thing1, int? thing2 = null, int? thing3 = null, int? thing4 = null, int? thing5 = null)
+        /*public Order(DateTime orderDate, int idClient, int thing1, int? thing2 = null, int? thing3 = null, int? thing4 = null, int? thing5 = null)
         {
             Id = null;
             OrderDate = orderDate;
@@ -71,14 +72,14 @@ namespace StoreManagement.DAL.Entities
         public override string ToString()
         {
             return $"Order ID: {Id}, Date: {OrderDate}, Client ID: {IdClient}, Things: [{Thing1}, {Thing2}, {Thing3}, {Thing4}, {Thing5}]";
-        }
+        }*/
 
         public string ToInsert()
         {
             return $"('{OrderDate:yyyy-MM-dd HH:mm:ss}', {IdClient}, {Thing1}, {Thing2}, {Thing3}, {Thing4}, {Thing5})";
         }
 
-        public override bool Equals(object obj)
+        /*public override bool Equals(object obj)
         {
             var order = obj as Order;
             if (order is null) return false;
@@ -95,7 +96,7 @@ namespace StoreManagement.DAL.Entities
         public override int GetHashCode()
         {
             return base.GetHashCode();
-        }
+        }*/
         #endregion
     }
 }

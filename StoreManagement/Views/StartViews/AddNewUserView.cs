@@ -1,6 +1,5 @@
 ﻿using StoreManagement.Presenters;
-using StoreManagement.Views.StartViews;
-using StoreManagement.Views;
+using StoreManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,15 +10,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StoreManagement.Views
+namespace StoreManagement.Views.StartViews
 {
-    public partial class AddNewUserView : Form, IAddNewUserView
+    public partial class AddNewUserView : UserControl, IAddNewUserView
     {
         private AddNewUserPresenter _presenter;
-        public AddNewUserView()
+        public AddNewUserView(Model model)
         {
             InitializeComponent();
-            _presenter = new AddNewUserPresenter(this); // Inicjalizacja prezentera
+            _presenter = new AddNewUserPresenter(this, model); 
         }
         public string UserName => textBox_name.Text;
         public string Surname => textBox_surname.Text;
@@ -36,9 +35,11 @@ namespace StoreManagement.Views
         }
         public void NavigateToClientView()
         {
-            ClientProductsView clientView = new ClientProductsView();
-            clientView.Show();
-            this.Hide();
+            MainForm mainForm = this.ParentForm as MainForm;
+            if (mainForm != null)
+            {
+                mainForm.ShowUserControl(new ClientProductsView());
+            }
         }
         
         private void button_sign_in_Click(object sender, EventArgs e)
@@ -48,9 +49,11 @@ namespace StoreManagement.Views
 
         private void button_log_in_Click(object sender, EventArgs e)
         {
-            LoginView loginView = new LoginView();
-            loginView.Show();
-            this.Hide();
+            MainForm mainForm = this.ParentForm as MainForm;
+            if (mainForm != null)
+            {
+                mainForm.ShowUserControl(new LoginView(new Model()));
+            }
         }
     }
 }

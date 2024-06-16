@@ -14,7 +14,7 @@ namespace StoreManagement.DAL.Repositories
         {
             List<Order> orders = new List<Order>();
 
-            using (var connection = DBConnection.Instance.Connection)
+            using (var connection = DBConnection.Instance.CreateConnection())
             {
                 string ALL_ORDERS = "SELECT * FROM orders";
                 MySqlCommand command = new MySqlCommand(ALL_ORDERS, connection);
@@ -29,7 +29,17 @@ namespace StoreManagement.DAL.Repositories
 
         public static bool AddNewOrderToDB(Order order)
         {
-            bool state = false;
+            using (var connection = DBConnection.Instance.CreateConnection())
+            {
+                string query = "INSERT INTO Orders orders (OrderDate, IdClient, Thing1, Thing2, Thing3, Thing4, Thing5) VALUES " + order.ToInsert();
+                MySqlCommand command = new MySqlCommand(query, connection);
+                connection.Open();
+                var result = command.ExecuteNonQuery();
+                connection.Close();
+                return result > 0;
+            }
+
+            /*bool state = false;
             using (var connection = DBConnection.Instance.Connection)
             {
                 string ADD_ORDER = "INSERT INTO orders (OrderDate, IdClient, Thing1, Thing2, Thing3, Thing4, Thing5) VALUES ";
@@ -41,7 +51,7 @@ namespace StoreManagement.DAL.Repositories
                 order.Id = (int)command.LastInsertedId;
                 connection.Close();
             }
-            return state;
+            return state;*/
         }
     }
 }

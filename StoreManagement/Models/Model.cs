@@ -8,13 +8,62 @@ using StoreManagement.DAL.Repositories;
 using System.Collections.ObjectModel;
 namespace StoreManagement.Models
 {
-    internal class Model
+    public class Model
     {
         public ObservableCollection<User> Users { get; set; } = new ObservableCollection<User>();
         public ObservableCollection<Clothes> Clothes { get; set; } = new ObservableCollection<Clothes>();
         public ObservableCollection<Order> Orders { get; set; } = new ObservableCollection<Order>();
 
         public Model()
+        {
+            LoadAllData();
+        }
+
+        private void LoadAllData()
+        {
+            var users = UsersRepository.LoadAllUsers();
+            foreach (var user in users)
+                Users.Add(user);
+
+            var clothes = ClothesRepository.LoadAllClothes();
+            foreach (var cloth in clothes)
+                Clothes.Add(cloth);
+
+            var orders = OrdersRepository.LoadAllOrders();
+            foreach (var order in orders)
+                Orders.Add(order);
+        }
+
+        public bool AddUserToDB(User user)
+        {
+            if (!Users.Contains(user) && UsersRepository.AddNewUserToDB(user))
+            {
+                Users.Add(user);
+                return true;
+            }
+            return false;
+        }
+
+        public bool AddClothesToDB(Clothes clothes)
+        {
+            if (!Clothes.Contains(clothes) && ClothesRepository.AddNewClothesToDB(clothes))
+            {
+                Clothes.Add(clothes);
+                return true;
+            }
+            return false;
+        }
+
+        public bool AddOrderToDB(Order order)
+        {
+            if (!Orders.Contains(order) && OrdersRepository.AddNewOrderToDB(order))
+            {
+                Orders.Add(order);
+                return true;
+            }
+            return false;
+        }
+        /*public Model()
         {
             var users = UsersRepository.LoadAllUsers();
             foreach (var u in users)
@@ -121,6 +170,6 @@ namespace StoreManagement.Models
             return false;
         }
 
-        //można dodać do edytowania zamówienia
+        //można dodać do edytowania zamówienia*/
     }
 }
