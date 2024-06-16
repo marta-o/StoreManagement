@@ -33,15 +33,7 @@ namespace StoreManagement.Views.StartViews
         {
             MessageBox.Show(message);
         }
-        public void NavigateToClientView()
-        {
-            MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new ClientProductsView());
-            }
-        }
-        
+                
         private void button_sign_in_Click(object sender, EventArgs e)
         {
             AddUser?.Invoke(this, EventArgs.Empty);

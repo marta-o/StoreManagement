@@ -31,25 +31,13 @@ namespace StoreManagement.DAL.Repositories
         {
             using (var connection = DBConnection.Instance.CreateConnection())
             {
-                string query = "INSERT INTO Users (Name, Surname, Address, Phone, Username, Password, Type) VALUES " + user.ToInsert();
-                MySqlCommand command = new MySqlCommand(query, connection);
+                string ADD_USER = "INSERT INTO Users (Name, Surname, Address, Phone, Username, Password, Type) VALUES " + user.ToInsert();
+                MySqlCommand command = new MySqlCommand(ADD_USER, connection);
                 connection.Open();
                 var result = command.ExecuteNonQuery();
                 connection.Close();
                 return result > 0;
             }
-            /*bool state = false;
-            using (var connection = DBConnection.Instance.Connection)
-            {
-                string ADD_USER = "INSERT INTO users (Name, Surname, Address, Phone, Username, Password, Type) VALUES ";
-                MySqlCommand command = new MySqlCommand($"{ADD_USER} {user.ToInsert()}", connection);
-                connection.Open();
-                var n = command.ExecuteNonQuery();
-                state = true;
-                user.Id = (int)command.LastInsertedId;
-                connection.Close();
-            }
-            return state;*/
         }
 
         // to chyba nie bedzie potrzebne

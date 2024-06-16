@@ -1,4 +1,7 @@
-﻿using System;
+﻿using StoreManagement.DAL.Entities;
+using StoreManagement.Models;
+using StoreManagement.Views.ClientViews;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +13,10 @@ using System.Windows.Forms;
 
 namespace StoreManagement.Views
 {
-    public partial class ClientOrdersView : UserControl
+    public partial class ClientOrdersView : UserControl, IClientOrdersView
     {
-        public ClientOrdersView()
+
+        public ClientOrdersView(Model model, int? clientId)
         {
             InitializeComponent();
         }

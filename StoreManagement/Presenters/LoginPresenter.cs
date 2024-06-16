@@ -32,11 +32,11 @@ namespace StoreManagement.Presenters
             {
                 if (user.Type.ToLower() == "client")
                 {
-                    _loginView.NavigateToClientView();
+                    _loginView.NavigateToClientView(user.Id);
                 }
                 else if (user.Type.ToLower() == "worker")
                 {
-                    _loginView.NavigateToWorkerView();
+                    _loginView.NavigateToWorkerView(user.Id);
                 }
             }
             else
@@ -48,24 +48,6 @@ namespace StoreManagement.Presenters
         private User ValidateUser(string username, string password)
         {
             return _model.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
-            /*using (var connection = DBConnection.Instance.Connection)
-            {
-                var query = "SELECT * FROM Users WHERE Username = @Username AND Password = @Password";
-                using (var command = new MySqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@Username", username);
-                    command.Parameters.AddWithValue("@Password", password);
-
-                    using (var reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            return new User(reader);
-                        }
-                    }
-                }
-            }
-            return null;*/
         }
     }
 }

@@ -31,8 +31,8 @@ namespace StoreManagement.DAL.Repositories
         {
             using (var connection = DBConnection.Instance.CreateConnection())
             {
-                string query = "INSERT INTO Orders orders (OrderDate, IdClient, Thing1, Thing2, Thing3, Thing4, Thing5) VALUES " + order.ToInsert();
-                MySqlCommand command = new MySqlCommand(query, connection);
+                string ADD_ORDER = "INSERT INTO Orders orders (OrderDate, IdClient, Thing1, Thing2, Thing3, Thing4, Thing5) VALUES " + order.ToInsert();
+                MySqlCommand command = new MySqlCommand(ADD_ORDER, connection);
                 connection.Open();
                 var result = command.ExecuteNonQuery();
                 connection.Close();

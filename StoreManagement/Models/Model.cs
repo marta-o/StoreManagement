@@ -13,12 +13,12 @@ namespace StoreManagement.Models
         public ObservableCollection<User> Users { get; set; } = new ObservableCollection<User>();
         public ObservableCollection<Clothes> Clothes { get; set; } = new ObservableCollection<Clothes>();
         public ObservableCollection<Order> Orders { get; set; } = new ObservableCollection<Order>();
+        private List<Clothes> _cartItems = new List<Clothes>();
 
         public Model()
         {
             LoadAllData();
         }
-
         private void LoadAllData()
         {
             var users = UsersRepository.LoadAllUsers();
@@ -63,20 +63,36 @@ namespace StoreManagement.Models
             }
             return false;
         }
-        /*public Model()
+
+        public List<Clothes> LoadAvailableClothes()
         {
-            var users = UsersRepository.LoadAllUsers();
-            foreach (var u in users)
-                Users.Add(u);   
-            var clothes = ClothesRepository.LoadAllClothes();
-            foreach (var c in clothes)
-                Clothes.Add(c);
-            var orders = OrdersRepository.LoadAllOrders();
-            foreach (var o in orders)
-                Orders.Add(o);
+            return ClothesRepository.LoadAvailableClothes();
         }
 
-        private User FindUserById(int id)
+        public void UpdateClothes(Clothes clothes)
+        {
+            ClothesRepository.UpdateClothes(clothes);
+        }
+
+        public void AddToCart(Clothes clothes)
+        {
+            _cartItems.Add(clothes);
+        }
+
+        public List<Clothes> GetCartItems()
+        {
+            return _cartItems;
+        }
+
+        public void RemoveFromCart(Clothes clothes)
+        {
+            _cartItems.Remove(clothes);
+        }
+        public void ClearCart()
+        {
+            _cartItems.Clear();
+        }
+        /*private User FindUserById(int id)
         {
             foreach (var u in Users)
             {

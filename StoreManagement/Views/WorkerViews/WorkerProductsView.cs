@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StoreManagement.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ namespace StoreManagement.Views
 {
     public partial class WorkerProductsView : UserControl
     {
-        public WorkerProductsView()
+        public WorkerProductsView(Model model, int? userId)
         {
             InitializeComponent();
         }

@@ -11,7 +11,7 @@ namespace StoreManagement.Views.StartViews
         string Username { get; }
         string Password { get; }
         void ShowMessage(string message);
-        void NavigateToClientView();
-        void NavigateToWorkerView();
+        void NavigateToClientView(int? userId);
+        void NavigateToWorkerView(int? userId);
     }
 }

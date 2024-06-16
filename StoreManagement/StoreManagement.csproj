@@ -113,6 +113,8 @@
     </Compile>
     <Compile Include="Models\Model.cs" />
     <Compile Include="Presenters\AddNewUserPresenter.cs" />
+    <Compile Include="Presenters\ClientCartPresenter.cs" />
+    <Compile Include="Presenters\ClientProductsPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -134,6 +136,9 @@
     <Compile Include="Views\ClientViews\ClientProductsView.Designer.cs">
       <DependentUpon>ClientProductsView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ClientViews\IClientOrdersView.cs" />
+    <Compile Include="Views\ClientViews\IClientProductsView.cs" />
+    <Compile Include="Views\ClientViews\IClientCartView.cs" />
     <Compile Include="Views\StartViews\AddNewUserView.cs">
       <SubType>UserControl</SubType>
     </Compile>

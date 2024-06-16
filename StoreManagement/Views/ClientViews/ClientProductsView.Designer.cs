@@ -1,4 +1,11 @@
-﻿namespace StoreManagement.Views
+﻿using Org.BouncyCastle.Ocsp;
+using Org.BouncyCastle.Utilities;
+using System;
+using System.Net;
+using System.Security.Cryptography;
+using System.Windows.Forms;
+
+namespace StoreManagement.Views
 {
     partial class ClientProductsView
     {
@@ -77,6 +84,7 @@
             this.button_cart.TabIndex = 3;
             this.button_cart.Text = "CART";
             this.button_cart.UseVisualStyleBackColor = false;
+            this.button_cart.Click += new System.EventHandler(this.button_cart_Click);
             // 
             // button_my_orders
             // 
@@ -88,6 +96,7 @@
             this.button_my_orders.TabIndex = 4;
             this.button_my_orders.Text = "MY ORDERS";
             this.button_my_orders.UseVisualStyleBackColor = false;
+            this.button_my_orders.Click += new System.EventHandler(this.button_my_orders_Click);
             // 
             // button_logout
             // 
@@ -99,6 +108,7 @@
             this.button_logout.TabIndex = 5;
             this.button_logout.Text = "LOGOUT";
             this.button_logout.UseVisualStyleBackColor = false;
+            this.button_logout.Click += new System.EventHandler(this.button_logout_Click);
             // 
             // listBox_client_product
             // 
@@ -107,7 +117,6 @@
             this.listBox_client_product.Name = "listBox_client_product";
             this.listBox_client_product.Size = new System.Drawing.Size(675, 212);
             this.listBox_client_product.TabIndex = 6;
-            //this.listBox_client_product.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // comboBox_type
             // 
@@ -117,6 +126,10 @@
             this.comboBox_type.Name = "comboBox_type";
             this.comboBox_type.Size = new System.Drawing.Size(121, 29);
             this.comboBox_type.TabIndex = 7;
+            this.comboBox_type.Items.AddRange(new object[]
+            {
+                "trousers", "dress", "tshirt", "skirt", "shorts", "sweater", "hoodie", "blouse"
+            });
             // 
             // comboBox_color
             // 
@@ -126,6 +139,10 @@
             this.comboBox_color.Name = "comboBox_color";
             this.comboBox_color.Size = new System.Drawing.Size(121, 29);
             this.comboBox_color.TabIndex = 8;
+            this.comboBox_color.Items.AddRange(new object[]
+            {
+                "white", "black", "green", "red", "blue", "orange", "yellow", "purple", "pink", "gray", "brown"
+            });
             // 
             // comboBox_price
             // 
@@ -135,6 +152,10 @@
             this.comboBox_price.Name = "comboBox_price";
             this.comboBox_price.Size = new System.Drawing.Size(121, 29);
             this.comboBox_price.TabIndex = 9;
+            /*this.comboBox_price.Items.AddRange(new object[]
+            {
+                "white", "black", "green", "red", "blue", "orange", "yellow", "purple", "pink", "gray", "brown"
+            });*/
             // 
             // comboBox_size
             // 
@@ -144,6 +165,10 @@
             this.comboBox_size.Name = "comboBox_size";
             this.comboBox_size.Size = new System.Drawing.Size(121, 29);
             this.comboBox_size.TabIndex = 10;
+            this.comboBox_size.Items.AddRange(new object[]
+            {
+                "s", "l", "m"
+            });
             // 
             // button_sort
             // 
@@ -155,6 +180,7 @@
             this.button_sort.TabIndex = 11;
             this.button_sort.Text = "SORT";
             this.button_sort.UseVisualStyleBackColor = false;
+            this.button_sort.Click += new System.EventHandler(this.button_sort_Click);
             // 
             // button_add_cart
             // 
@@ -166,6 +192,7 @@
             this.button_add_cart.TabIndex = 12;
             this.button_add_cart.Text = "ADD TO CART";
             this.button_add_cart.UseVisualStyleBackColor = false;
+            this.button_add_cart.Click += new System.EventHandler(this.button_add_cart_Click);
             // 
             // label_type
             // 
@@ -232,7 +259,6 @@
             this.Controls.Add(this.splitter_client_products);
             this.Name = "ClientProductsView";
             this.Text = "ClientProductsView";
-            //this.Load += new System.EventHandler(this.ClientProductsView_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
