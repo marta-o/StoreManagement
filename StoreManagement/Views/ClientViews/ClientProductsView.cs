@@ -18,18 +18,14 @@ namespace StoreManagement.Views
 {
     public partial class ClientProductsView : UserControl, IClientProductsView
     {
-        private ClientProductsPresenter _clientProductsPresenter;
-        private int? _clientId;
-        private List<Clothes> _availableClothes;
-        private List<Clothes> _cartItems;
-        public ClientProductsView(Model model, int? userId, List<Clothes> cartItems)
+        private ClientProductsPresenter _presenter;
+        private int _clientId;
+        public ClientProductsView(Model model, int clientId)
         {
             InitializeComponent();
-            _clientProductsPresenter = new ClientProductsPresenter(this, model);
-            _clientId = userId;
-            _availableClothes = model.LoadAvailableClothes();
-            _cartItems = cartItems;
-            DisplayAvailableClothes(_availableClothes);
+            _presenter = new ClientProductsPresenter(this, model, clientId);
+            _clientId = clientId;
+            DisplayAvailableClothes(_presenter.Model.LoadAvailableClothes());
         }
         public void ShowMessage(string message)
         {
@@ -48,44 +44,16 @@ namespace StoreManagement.Views
             var selectedClothes = new List<Clothes>();
             foreach (var selectedItem in listBox_client_product.SelectedItems)
             {
-                var selectedCloth = _availableClothes.First(c => c.Name == selectedItem.ToString());
+                var selectedCloth = _presenter.Model.Clothes.First(c => c.Name == selectedItem.ToString());
                 selectedClothes.Add(selectedCloth);
             }
             return selectedClothes;
         }
-        public void button_cart_Click(object sender, EventArgs e)
-        {
-            MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new ClientCartView(_clientProductsPresenter.Model, _clientId, _cartItems));
-            }
-        }
-        public void button_my_orders_Click(object sender, EventArgs e)
-        {
-            MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new ClientOrdersView(_clientProductsPresenter.Model, _clientId));
-            }
-        }
-        public void button_logout_Click(object sender, EventArgs e)
-        {
-            MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new LoginView(new Model()));
-            }
-        }
+        
 
         private void button_add_cart_Click(object sender, EventArgs e)
         {
-            var selectedClothes = GetSelectedClothes();
-            foreach (var cloth in selectedClothes)
-            {
-                _cartItems.Add(cloth);
-            }
-            ShowMessage("Selected items added to cart");
+            _presenter.AddToCart();
         }
 
         private void button_sort_Click(object sender, EventArgs e)
@@ -95,17 +63,40 @@ namespace StoreManagement.Views
             string selectedSize = comboBox_size.SelectedItem?.ToString();
             //uint.TryParse(comboBox_price.SelectedItem?.ToString(), out uint selectedPrice);
 
-            var filteredClothes = _availableClothes
+            var filteredClothes = _presenter.Model.LoadAvailableClothes()
                 .Where(c => (string.IsNullOrEmpty(selectedType) || c.Category == selectedType) &&
                             (string.IsNullOrEmpty(selectedColor) || c.Colour == selectedColor) &&
                             (string.IsNullOrEmpty(selectedSize) || c.Size == selectedSize) /*&&
                             (selectedPrice == 0 || c.Price <= selectedPrice)*/)
                 .ToList();
 
-            listBox_client_product.Items.Clear();
-            foreach (var clothes in filteredClothes)
+            DisplayAvailableClothes(filteredClothes);
+        }
+
+        // boczne przyciski
+        public void button_cart_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = this.ParentForm as MainForm;
+            if (mainForm != null)
             {
-                listBox_client_product.Items.Add(clothes.Name);
+                mainForm.ShowUserControl(new ClientCartView(_presenter.Model, _clientId));
+            }
+        }
+        public void button_my_orders_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = this.ParentForm as MainForm;
+            if (mainForm != null)
+            {
+                mainForm.ShowUserControl(new ClientOrdersView(_presenter.Model, _clientId));
+            }
+        }
+        public void button_logout_Click(object sender, EventArgs e)
+        {
+            _presenter.Logout();
+            MainForm mainForm = this.ParentForm as MainForm;
+            if (mainForm != null)
+            {
+                mainForm.ShowUserControl(new LoginView(new Model()));
             }
         }
     }

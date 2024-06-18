@@ -10,13 +10,13 @@ namespace StoreManagement.DAL.Entities
     public class Clothes
     {
         #region Properties
-        public int? Id { get; set; } 
+        public int Id { get; set; } 
         public string Name { get; set; }
         public string Category { get; set; }
         public string Size { get; set; }
         public string Colour { get; set; }
-        public uint Price { get; set; }
-        public uint Amount { get; set; }
+        public int Price { get; set; }
+        public int Amount { get; set; }
         /* 
          * uint: 
          * Typ całkowitoliczbowy bez znaku, który przechowuje tylko liczby dodatnie. 
@@ -38,8 +38,8 @@ namespace StoreManagement.DAL.Entities
             Category = reader["Category"].ToString();
             Size = reader["Size"].ToString();
             Colour = reader["Colour"].ToString();
-            Price = uint.Parse(reader["Price"].ToString());
-            Amount = uint.Parse(reader["Amount"].ToString());
+            Price = int.Parse(reader["Price"].ToString());
+            Amount = int.Parse(reader["Amount"].ToString());
         }
         /*//konstruktor tworzacy obiekt nie dodany jeszcze do bazy z id pustym
         public Clothes(string name, string category, string size, string colour, uint price, uint amount)

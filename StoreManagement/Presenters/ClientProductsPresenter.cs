@@ -6,32 +6,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StoreManagement.DAL.Entities;
 
 namespace StoreManagement.Presenters
 {
     public class ClientProductsPresenter
     {
-        private IClientProductsView _clientProductsView;
+        private IClientProductsView _view;
         private Model _model;
-        public ClientProductsPresenter(IClientProductsView clientProductsView, Model model)
+        private int _clientId;
+        public ClientProductsPresenter(IClientProductsView clientProductsView, Model model, int clientId)
         {
-            _clientProductsView = clientProductsView;
+            _view = clientProductsView;
             _model = model;
-            LoadAvailableClothes();
+            _clientId = clientId; 
+            LoadAvailableClothes();  
         }
-        public Model Model
-        {
-            get { return _model; }
-        }
+        public Model Model => _model;
         public void LoadAvailableClothes()
         {
             var clothes = _model.LoadAvailableClothes();
-            _clientProductsView.DisplayAvailableClothes(clothes);
+            _view.DisplayAvailableClothes(clothes);
         }
 
         public void AddToCart()
         {
-            var selectedClothes = _clientProductsView.GetSelectedClothes();
+            var selectedClothes = _view.GetSelectedClothes();
             foreach (var clothes in selectedClothes)
             {
                 if (clothes.Amount > 0)
@@ -39,14 +39,18 @@ namespace StoreManagement.Presenters
                     clothes.Amount--;
                     _model.UpdateClothes(clothes);
                     _model.AddToCart(clothes);
-                    _clientProductsView.ShowMessage($"{clothes.Name} added to cart");
+                    _view.ShowMessage($"{clothes.Name} added to cart");
                 }
                 else
                 {
-                    _clientProductsView.ShowMessage("This item is out of stock.");
+                    _view.ShowMessage("This item is out of stock.");
                 }
             }
             LoadAvailableClothes();
+        }
+        public void Logout()
+        {
+            _model.RestoreCartItems();
         }
     }
 }

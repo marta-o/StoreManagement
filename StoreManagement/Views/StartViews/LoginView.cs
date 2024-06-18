@@ -32,16 +32,15 @@ namespace StoreManagement.Views.StartViews
             MessageBox.Show(message);
         }
 
-        public void NavigateToClientView(int? userId)
+        public void NavigateToClientView(int userId)
         {
-            List<Clothes> cart = new List<Clothes> { };
             MainForm mainForm = this.ParentForm as MainForm;
             if (mainForm != null)
             {
-                mainForm.ShowUserControl(new ClientProductsView(new Model(), userId, cart));
+                mainForm.ShowUserControl(new ClientProductsView(new Model(), userId));
             }
         }
-        public void NavigateToWorkerView(int? userId)
+        public void NavigateToWorkerView(int userId)
         {
             Model model = new Model();
             MainForm mainForm = this.ParentForm as MainForm;

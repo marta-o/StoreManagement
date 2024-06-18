@@ -2,6 +2,7 @@
 using StoreManagement.Models;
 using StoreManagement.Presenters;
 using StoreManagement.Views.ClientViews;
+using StoreManagement.Views.StartViews;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,17 +18,22 @@ namespace StoreManagement.Views
     public partial class ClientCartView : UserControl, IClientCartView
     {
         private ClientCartPresenter _presenter;
-        private int? _clientId;
-        private List<Clothes> _cartItems;
-        public ClientCartView(Model model, int? clientId, List<Clothes> cartItems)
+        private int _clientId;
+        public ClientCartView(Model model, int clientId)
         {
             InitializeComponent();
-            _presenter = new ClientCartPresenter(this, model, clientId, cartItems);
+            _presenter = new ClientCartPresenter(this, model, clientId);
             _clientId = clientId;
-            _cartItems = cartItems;
             LoadCartItems();
         }
-
+        private void LoadCartItems()
+        {
+            _presenter.LoadCartItems();
+        }
+        public void ShowMessage(string message)
+        {
+            MessageBox.Show(message);
+        }
         public void DisplayCartItems(List<Clothes> cartItems)
         {
             listBox_cart.Items.Clear();
@@ -36,20 +42,13 @@ namespace StoreManagement.Views
                 listBox_cart.Items.Add($"{item.Name} - {item.Price}");
             }
         }
-
-        public void ShowMessage(string message)
-        {
-            MessageBox.Show(message);
-        }
-
         private void button_remove_Click(object sender, EventArgs e)
         {
             if (listBox_cart.SelectedIndex != -1)
             {
                 var selectedIdx = listBox_cart.SelectedIndex;
-                var removedItem = _cartItems[selectedIdx];
+                var removedItem = _presenter.Model.CartItems[selectedIdx];
                 _presenter.RemoveFromCart(removedItem);
-                _cartItems.Remove(removedItem); // Update local cart items list
                 LoadCartItems();
             }
             else
@@ -61,9 +60,33 @@ namespace StoreManagement.Views
         {
             _presenter.PurchaseItems();
         }
-        private void LoadCartItems()
+        
+
+        //boczne przyciski
+        public void button_shopping_Click(object sender, EventArgs e)
         {
-            DisplayCartItems(_cartItems);
+            MainForm mainForm = this.ParentForm as MainForm;
+            if (mainForm != null)
+            {
+                mainForm.ShowUserControl(new ClientProductsView(_presenter.Model, _clientId));
+            }
+        }
+        public void button_my_orders_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = this.ParentForm as MainForm;
+            if (mainForm != null)
+            {
+                mainForm.ShowUserControl(new ClientOrdersView(_presenter.Model, _clientId));
+            }
+        }
+        public void button_logout_Click(object sender, EventArgs e)
+        {
+            _presenter.Logout();
+            MainForm mainForm = this.ParentForm as MainForm;
+            if (mainForm != null)
+            {
+                mainForm.ShowUserControl(new LoginView(new Model()));
+            }
         }
     }
 }

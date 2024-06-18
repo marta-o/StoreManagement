@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Splitter splitter_worker_products;
+            this.splitter_worker_products = new System.Windows.Forms.Splitter();
             this.button_availability = new System.Windows.Forms.Button();
             this.button_orders = new System.Windows.Forms.Button();
             this.button_add_employee = new System.Windows.Forms.Button();
@@ -37,26 +37,27 @@
             this.button_edit = new System.Windows.Forms.Button();
             this.button_add = new System.Windows.Forms.Button();
             this.label_products = new System.Windows.Forms.Label();
-            splitter_worker_products = new System.Windows.Forms.Splitter();
             this.SuspendLayout();
             // 
             // splitter_worker_products
             // 
-            splitter_worker_products.BackColor = System.Drawing.Color.Orchid;
-            splitter_worker_products.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            splitter_worker_products.Location = new System.Drawing.Point(0, 0);
-            splitter_worker_products.Name = "splitter_worker_products";
-            splitter_worker_products.Size = new System.Drawing.Size(359, 549);
-            splitter_worker_products.TabIndex = 0;
-            splitter_worker_products.TabStop = false;
+            this.splitter_worker_products.BackColor = System.Drawing.Color.Orchid;
+            this.splitter_worker_products.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.splitter_worker_products.Location = new System.Drawing.Point(0, 0);
+            this.splitter_worker_products.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitter_worker_products.Name = "splitter_worker_products";
+            this.splitter_worker_products.Size = new System.Drawing.Size(477, 677);
+            this.splitter_worker_products.TabIndex = 0;
+            this.splitter_worker_products.TabStop = false;
             // 
             // button_availability
             // 
             this.button_availability.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button_availability.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_availability.Location = new System.Drawing.Point(69, 27);
+            this.button_availability.Location = new System.Drawing.Point(92, 33);
+            this.button_availability.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_availability.Name = "button_availability";
-            this.button_availability.Size = new System.Drawing.Size(223, 61);
+            this.button_availability.Size = new System.Drawing.Size(297, 75);
             this.button_availability.TabIndex = 2;
             this.button_availability.Text = "AVAILABILITY";
             this.button_availability.UseVisualStyleBackColor = false;
@@ -65,9 +66,10 @@
             // 
             this.button_orders.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button_orders.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.button_orders.Location = new System.Drawing.Point(69, 106);
+            this.button_orders.Location = new System.Drawing.Point(92, 130);
+            this.button_orders.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_orders.Name = "button_orders";
-            this.button_orders.Size = new System.Drawing.Size(223, 59);
+            this.button_orders.Size = new System.Drawing.Size(297, 73);
             this.button_orders.TabIndex = 3;
             this.button_orders.Text = "ORDERS";
             this.button_orders.UseVisualStyleBackColor = false;
@@ -76,9 +78,10 @@
             // 
             this.button_add_employee.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button_add_employee.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.button_add_employee.Location = new System.Drawing.Point(69, 393);
+            this.button_add_employee.Location = new System.Drawing.Point(92, 484);
+            this.button_add_employee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_add_employee.Name = "button_add_employee";
-            this.button_add_employee.Size = new System.Drawing.Size(223, 59);
+            this.button_add_employee.Size = new System.Drawing.Size(297, 73);
             this.button_add_employee.TabIndex = 4;
             this.button_add_employee.Text = "ADD EMPLOYEE";
             this.button_add_employee.UseVisualStyleBackColor = false;
@@ -87,9 +90,10 @@
             // 
             this.button_logout.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button_logout.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.button_logout.Location = new System.Drawing.Point(69, 471);
+            this.button_logout.Location = new System.Drawing.Point(92, 580);
+            this.button_logout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_logout.Name = "button_logout";
-            this.button_logout.Size = new System.Drawing.Size(223, 59);
+            this.button_logout.Size = new System.Drawing.Size(297, 73);
             this.button_logout.TabIndex = 5;
             this.button_logout.Text = "LOGOUT";
             this.button_logout.UseVisualStyleBackColor = false;
@@ -97,18 +101,21 @@
             // listBox_products
             // 
             this.listBox_products.FormattingEnabled = true;
-            this.listBox_products.Location = new System.Drawing.Point(396, 106);
+            this.listBox_products.ItemHeight = 16;
+            this.listBox_products.Location = new System.Drawing.Point(523, 130);
+            this.listBox_products.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBox_products.Name = "listBox_products";
-            this.listBox_products.Size = new System.Drawing.Size(689, 290);
+            this.listBox_products.Size = new System.Drawing.Size(917, 356);
             this.listBox_products.TabIndex = 6;
             // 
             // button_edit
             // 
             this.button_edit.BackColor = System.Drawing.Color.Orchid;
             this.button_edit.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.button_edit.Location = new System.Drawing.Point(479, 471);
+            this.button_edit.Location = new System.Drawing.Point(639, 580);
+            this.button_edit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_edit.Name = "button_edit";
-            this.button_edit.Size = new System.Drawing.Size(223, 57);
+            this.button_edit.Size = new System.Drawing.Size(297, 70);
             this.button_edit.TabIndex = 7;
             this.button_edit.Text = "EDIT PRODUCT";
             this.button_edit.UseVisualStyleBackColor = false;
@@ -117,9 +124,10 @@
             // 
             this.button_add.BackColor = System.Drawing.Color.Orchid;
             this.button_add.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.button_add.Location = new System.Drawing.Point(771, 471);
+            this.button_add.Location = new System.Drawing.Point(1028, 580);
+            this.button_add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(223, 57);
+            this.button_add.Size = new System.Drawing.Size(297, 70);
             this.button_add.TabIndex = 8;
             this.button_add.Text = "ADD PRODUCT";
             this.button_add.UseVisualStyleBackColor = false;
@@ -130,18 +138,18 @@
             this.label_products.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label_products.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_products.ForeColor = System.Drawing.Color.Black;
-            this.label_products.Location = new System.Drawing.Point(642, 41);
+            this.label_products.Location = new System.Drawing.Point(856, 50);
+            this.label_products.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_products.Name = "label_products";
-            this.label_products.Size = new System.Drawing.Size(206, 47);
+            this.label_products.Size = new System.Drawing.Size(256, 60);
             this.label_products.TabIndex = 9;
             this.label_products.Text = "PRODUCTS";
             // 
             // WorkerProductsView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1200, 550);
             this.Controls.Add(this.label_products);
             this.Controls.Add(this.button_add);
             this.Controls.Add(this.button_edit);
@@ -150,10 +158,10 @@
             this.Controls.Add(this.button_add_employee);
             this.Controls.Add(this.button_orders);
             this.Controls.Add(this.button_availability);
-            this.Controls.Add(splitter_worker_products);
+            this.Controls.Add(this.splitter_worker_products);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "WorkerProductsView";
-            this.Text = "WorkerProductsView";
-            //this.Load += new System.EventHandler(this.WorkerProductsView_Load);
+            this.Size = new System.Drawing.Size(1600, 677);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,5 +176,6 @@
         private System.Windows.Forms.Button button_edit;
         private System.Windows.Forms.Button button_add;
         private System.Windows.Forms.Label label_products;
+        private System.Windows.Forms.Splitter splitter_worker_products;
     }
 }

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using StoreManagement.DAL.Entities;
 using System.Windows.Forms;
+using StoreManagement.DAL.Repositories;
 
 namespace StoreManagement.Presenters
 {
@@ -14,21 +15,19 @@ namespace StoreManagement.Presenters
     {
         private IClientCartView _view;
         private Model _model;
-        private readonly int? _clientId;
-        private List<Clothes> _cartItems;
+        private int _clientId;
 
-        public ClientCartPresenter(IClientCartView view, Model model, int? clientId, List<Clothes> cartItems)
+        public ClientCartPresenter(IClientCartView view, Model model, int clientId)
         {
             _view = view;
             _model = model;
             _clientId = clientId;
-            _cartItems = cartItems;
             LoadCartItems();
         }
-        
+        public Model Model => _model;
         public void LoadCartItems()
         {
-            _view.DisplayCartItems(_cartItems);
+            _view.DisplayCartItems(_model.GetCartItems());
         }
         public void RemoveFromCart(Clothes clothes)
         {
@@ -37,17 +36,38 @@ namespace StoreManagement.Presenters
             _model.UpdateClothes(clothes);
             LoadCartItems();
         }
-
         public void PurchaseItems()
         {
-            // do dokończenia
-            _model.ClearCart();
-            _view.ShowMessage("Purchase completed successfully!");
-            LoadCartItems();
+            if (_model.CartItems.Count <= 5)
+            {
+                var order = new Order
+                {
+                    OrderDate = DateTime.Now,
+                    IdClient = _clientId,
+                    Thing1 = _model.CartItems.ElementAtOrDefault(0).Id,
+                    Thing2 = _model.CartItems.ElementAtOrDefault(1)?.Id,
+                    Thing3 = _model.CartItems.ElementAtOrDefault(2)?.Id,
+                    Thing4 = _model.CartItems.ElementAtOrDefault(3)?.Id,
+                    Thing5 = _model.CartItems.ElementAtOrDefault(4)?.Id
+                };
+                OrdersRepository.AddNewOrderToDB(order);
+                _model.ClearCart();
+                /*foreach (var clothes in _cartItems)
+                {
+                    _model.UpdateClothesAmount(clothes, -1);
+                }*/
+                _view.ShowMessage("Purchase completed successfully!");
+                LoadCartItems();
+            }
+            else
+            {
+                _view.ShowMessage("You can only purchase up to 5 items per order.");
+            }
         }
-        /*public List<Clothes> GetCartItems()
+
+        public void Logout()
         {
-            return _model.GetCartItems();
-        }*/
+            _model.RestoreCartItems();
+        }
     }
 }

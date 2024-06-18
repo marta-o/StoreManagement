@@ -13,7 +13,7 @@ namespace StoreManagement.Views
 {
     public partial class WorkerProductsView : UserControl
     {
-        public WorkerProductsView(Model model, int? userId)
+        public WorkerProductsView(Model model, int userId)
         {
             InitializeComponent();
         }

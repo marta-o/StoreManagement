@@ -10,7 +10,7 @@ namespace StoreManagement.DAL.Entities
     public class Order
     {
         #region Properties
-        public int? Id { get; set; }
+        public int Id { get; set; }
         public DateTime OrderDate { get; set; }
         public int IdClient { get; set; }
         public int Thing1 { get; set; }
@@ -76,7 +76,12 @@ namespace StoreManagement.DAL.Entities
 
         public string ToInsert()
         {
-            return $"('{OrderDate:yyyy-MM-dd HH:mm:ss}', {IdClient}, {Thing1}, {Thing2}, {Thing3}, {Thing4}, {Thing5})";
+            string thing2Value = Thing2.HasValue ? Thing2.Value.ToString() : "NULL";
+            string thing3Value = Thing3.HasValue ? Thing3.Value.ToString() : "NULL";
+            string thing4Value = Thing4.HasValue ? Thing4.Value.ToString() : "NULL";
+            string thing5Value = Thing5.HasValue ? Thing5.Value.ToString() : "NULL";
+
+            return $"('{OrderDate:yyyy-MM-dd HH:mm:ss}', {IdClient}, {Thing1}, {thing2Value}, {thing3Value}, {thing4Value}, {thing5Value})";
         }
 
         /*public override bool Equals(object obj)

@@ -73,6 +73,7 @@
             this.button_purchase.TabIndex = 34;
             this.button_purchase.Text = "PURCHASE";
             this.button_purchase.UseVisualStyleBackColor = false;
+            this.button_purchase.Click += new System.EventHandler(this.button_purchase_Click);
             // 
             // button_remove
             // 
@@ -84,6 +85,7 @@
             this.button_remove.TabIndex = 33;
             this.button_remove.Text = "REMOVE PRODUCT";
             this.button_remove.UseVisualStyleBackColor = false;
+            this.button_remove.Click += new System.EventHandler(this.button_remove_Click);
             // 
             // listBox_cart
             // 
@@ -103,6 +105,7 @@
             this.button_logout.TabIndex = 31;
             this.button_logout.Text = "LOGOUT";
             this.button_logout.UseVisualStyleBackColor = false;
+            this.button_logout.Click += new System.EventHandler(this.button_logout_Click);
             // 
             // button_my_orders
             // 
@@ -114,6 +117,7 @@
             this.button_my_orders.TabIndex = 30;
             this.button_my_orders.Text = "MY ORDERS";
             this.button_my_orders.UseVisualStyleBackColor = false;
+            this.button_my_orders.Click += new System.EventHandler(this.button_my_orders_Click);
             // 
             // button_cart
             // 
@@ -136,6 +140,7 @@
             this.button_shopping.TabIndex = 28;
             this.button_shopping.Text = "SHOPPING";
             this.button_shopping.UseVisualStyleBackColor = false;
+            this.button_shopping.Click += new System.EventHandler(this.button_shopping_Click);
             // 
             // splitter_client_products
             // 

@@ -13,7 +13,7 @@ namespace StoreManagement.Models
         public ObservableCollection<User> Users { get; set; } = new ObservableCollection<User>();
         public ObservableCollection<Clothes> Clothes { get; set; } = new ObservableCollection<Clothes>();
         public ObservableCollection<Order> Orders { get; set; } = new ObservableCollection<Order>();
-        private List<Clothes> _cartItems = new List<Clothes>();
+        public List<Clothes> CartItems = new List<Clothes>();
 
         public Model()
         {
@@ -33,7 +33,6 @@ namespace StoreManagement.Models
             foreach (var order in orders)
                 Orders.Add(order);
         }
-
         public bool AddUserToDB(User user)
         {
             if (!Users.Contains(user) && UsersRepository.AddNewUserToDB(user))
@@ -43,7 +42,6 @@ namespace StoreManagement.Models
             }
             return false;
         }
-
         public bool AddClothesToDB(Clothes clothes)
         {
             if (!Clothes.Contains(clothes) && ClothesRepository.AddNewClothesToDB(clothes))
@@ -53,7 +51,6 @@ namespace StoreManagement.Models
             }
             return false;
         }
-
         public bool AddOrderToDB(Order order)
         {
             if (!Orders.Contains(order) && OrdersRepository.AddNewOrderToDB(order))
@@ -68,29 +65,43 @@ namespace StoreManagement.Models
         {
             return ClothesRepository.LoadAvailableClothes();
         }
-
         public void UpdateClothes(Clothes clothes)
         {
             ClothesRepository.UpdateClothes(clothes);
         }
-
         public void AddToCart(Clothes clothes)
         {
-            _cartItems.Add(clothes);
+            CartItems.Add(clothes);
         }
-
         public List<Clothes> GetCartItems()
         {
-            return _cartItems;
+            return CartItems;
         }
-
         public void RemoveFromCart(Clothes clothes)
         {
-            _cartItems.Remove(clothes);
+            CartItems.Remove(clothes);
         }
         public void ClearCart()
         {
-            _cartItems.Clear();
+            CartItems.Clear();
+        }
+        public void UpdateClothesAmount(Clothes clothes, int amountChange)
+        {
+            var item = Clothes.FirstOrDefault(c => c.Id == clothes.Id);
+            if (item != null)
+            {
+                item.Amount += amountChange;
+                UpdateClothes(item);
+            }
+        }
+        public void RestoreCartItems()
+        {
+            foreach (var clothes in CartItems)
+            {
+                clothes.Amount++;
+                UpdateClothes(clothes);
+            }
+            ClearCart();
         }
         /*private User FindUserById(int id)
         {

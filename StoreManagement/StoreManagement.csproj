@@ -114,6 +114,7 @@
     <Compile Include="Models\Model.cs" />
     <Compile Include="Presenters\AddNewUserPresenter.cs" />
     <Compile Include="Presenters\ClientCartPresenter.cs" />
+    <Compile Include="Presenters\ClientOrdersPresenter.cs" />
     <Compile Include="Presenters\ClientProductsPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
     <Compile Include="Program.cs" />
@@ -194,6 +195,9 @@
     </Compile>
     <EmbeddedResource Include="Views\StartViews\AddNewUserView.resx">
       <DependentUpon>AddNewUserView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\WorkerViews\WorkerProductsView.resx">
+      <DependentUpon>WorkerProductsView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
