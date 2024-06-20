@@ -60,7 +60,10 @@ namespace StoreManagement.Models
             }
             return false;
         }
-
+        public List<Clothes> LoadAllClothes()
+        {
+            return ClothesRepository.LoadAllClothes();
+        }
         public List<Clothes> LoadAvailableClothes()
         {
             return ClothesRepository.LoadAvailableClothes();
@@ -103,6 +106,12 @@ namespace StoreManagement.Models
             }
             ClearCart();
         }
+
+        public bool IsUsernameTaken(string username)
+        {
+            return UsersRepository.IsUsernameInDB(username);
+        }
+
         /*private User FindUserById(int id)
         {
             foreach (var u in Users)

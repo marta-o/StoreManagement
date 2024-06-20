@@ -16,7 +16,6 @@ namespace StoreManagement.Presenters
         private IClientCartView _view;
         private Model _model;
         private int _clientId;
-
         public ClientCartPresenter(IClientCartView view, Model model, int clientId)
         {
             _view = view;
@@ -52,10 +51,6 @@ namespace StoreManagement.Presenters
                 };
                 OrdersRepository.AddNewOrderToDB(order);
                 _model.ClearCart();
-                /*foreach (var clothes in _cartItems)
-                {
-                    _model.UpdateClothesAmount(clothes, -1);
-                }*/
                 _view.ShowMessage("Purchase completed successfully!");
                 LoadCartItems();
             }

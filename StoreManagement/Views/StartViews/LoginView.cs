@@ -42,11 +42,10 @@ namespace StoreManagement.Views.StartViews
         }
         public void NavigateToWorkerView(int userId)
         {
-            Model model = new Model();
             MainForm mainForm = this.ParentForm as MainForm;
             if (mainForm != null)
             {
-                mainForm.ShowUserControl(new WorkerProductsView(model, userId));
+                mainForm.ShowUserControl(new WorkerProductsView(new Model()));
             }
         }
         

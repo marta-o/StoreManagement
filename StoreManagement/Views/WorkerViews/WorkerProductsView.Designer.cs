@@ -44,7 +44,7 @@
             this.splitter_worker_products.BackColor = System.Drawing.Color.Orchid;
             this.splitter_worker_products.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.splitter_worker_products.Location = new System.Drawing.Point(0, 0);
-            this.splitter_worker_products.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitter_worker_products.Margin = new System.Windows.Forms.Padding(4);
             this.splitter_worker_products.Name = "splitter_worker_products";
             this.splitter_worker_products.Size = new System.Drawing.Size(477, 677);
             this.splitter_worker_products.TabIndex = 0;
@@ -55,7 +55,7 @@
             this.button_availability.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button_availability.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_availability.Location = new System.Drawing.Point(92, 33);
-            this.button_availability.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_availability.Margin = new System.Windows.Forms.Padding(4);
             this.button_availability.Name = "button_availability";
             this.button_availability.Size = new System.Drawing.Size(297, 75);
             this.button_availability.TabIndex = 2;
@@ -67,43 +67,46 @@
             this.button_orders.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button_orders.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.button_orders.Location = new System.Drawing.Point(92, 130);
-            this.button_orders.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_orders.Margin = new System.Windows.Forms.Padding(4);
             this.button_orders.Name = "button_orders";
             this.button_orders.Size = new System.Drawing.Size(297, 73);
             this.button_orders.TabIndex = 3;
             this.button_orders.Text = "ORDERS";
             this.button_orders.UseVisualStyleBackColor = false;
+            this.button_orders.Click += new System.EventHandler(this.button_orders_Click);
             // 
             // button_add_employee
             // 
             this.button_add_employee.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button_add_employee.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.button_add_employee.Location = new System.Drawing.Point(92, 484);
-            this.button_add_employee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_add_employee.Margin = new System.Windows.Forms.Padding(4);
             this.button_add_employee.Name = "button_add_employee";
             this.button_add_employee.Size = new System.Drawing.Size(297, 73);
             this.button_add_employee.TabIndex = 4;
             this.button_add_employee.Text = "ADD EMPLOYEE";
             this.button_add_employee.UseVisualStyleBackColor = false;
+            this.button_add_employee.Click += new System.EventHandler(this.button_add_employee_Click);
             // 
             // button_logout
             // 
             this.button_logout.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button_logout.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.button_logout.Location = new System.Drawing.Point(92, 580);
-            this.button_logout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_logout.Margin = new System.Windows.Forms.Padding(4);
             this.button_logout.Name = "button_logout";
             this.button_logout.Size = new System.Drawing.Size(297, 73);
             this.button_logout.TabIndex = 5;
             this.button_logout.Text = "LOGOUT";
             this.button_logout.UseVisualStyleBackColor = false;
+            this.button_logout.Click += new System.EventHandler(this.button_logout_Click);
             // 
             // listBox_products
             // 
             this.listBox_products.FormattingEnabled = true;
             this.listBox_products.ItemHeight = 16;
-            this.listBox_products.Location = new System.Drawing.Point(523, 130);
-            this.listBox_products.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox_products.Location = new System.Drawing.Point(528, 130);
+            this.listBox_products.Margin = new System.Windows.Forms.Padding(4);
             this.listBox_products.Name = "listBox_products";
             this.listBox_products.Size = new System.Drawing.Size(917, 356);
             this.listBox_products.TabIndex = 6;
@@ -113,7 +116,7 @@
             this.button_edit.BackColor = System.Drawing.Color.Orchid;
             this.button_edit.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.button_edit.Location = new System.Drawing.Point(639, 580);
-            this.button_edit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_edit.Margin = new System.Windows.Forms.Padding(4);
             this.button_edit.Name = "button_edit";
             this.button_edit.Size = new System.Drawing.Size(297, 70);
             this.button_edit.TabIndex = 7;
@@ -125,12 +128,13 @@
             this.button_add.BackColor = System.Drawing.Color.Orchid;
             this.button_add.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.button_add.Location = new System.Drawing.Point(1028, 580);
-            this.button_add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_add.Margin = new System.Windows.Forms.Padding(4);
             this.button_add.Name = "button_add";
             this.button_add.Size = new System.Drawing.Size(297, 70);
             this.button_add.TabIndex = 8;
             this.button_add.Text = "ADD PRODUCT";
             this.button_add.UseVisualStyleBackColor = false;
+            this.button_add.Click += new System.EventHandler(this.button_add_Click);
             // 
             // label_products
             // 
@@ -159,7 +163,7 @@
             this.Controls.Add(this.button_orders);
             this.Controls.Add(this.button_availability);
             this.Controls.Add(this.splitter_worker_products);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "WorkerProductsView";
             this.Size = new System.Drawing.Size(1600, 677);
             this.ResumeLayout(false);

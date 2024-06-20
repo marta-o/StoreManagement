@@ -1,5 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
-using StoreManagement.Views.StartViews;
+using StoreManagement.Views.WorkerViews;
 using StoreManagement.DAL;
 using StoreManagement.Models;
 using System;
@@ -9,37 +9,44 @@ using System.Text;
 using System.Threading.Tasks;
 using StoreManagement.DAL.Entities;
 
+
 namespace StoreManagement.Presenters
 {
-    public class AddNewUserPresenter
+    public class WorkerAddUserPresenter
     {
-        private IAddNewUserView _view;
+        private IWorkerAddUserView _workerAddUserView;
         private Model _model;
-        public AddNewUserPresenter(IAddNewUserView view, Model model)
+
+        public WorkerAddUserPresenter(IWorkerAddUserView view, Model model)
         {
-            _view = view;
+            _workerAddUserView = view;
             _model = model;
-            _view.AddUser += Create;
+            _workerAddUserView.AddUser += Create;
 
         }
         public void Create(object sender, EventArgs e)
         {
-            string name = _view.UserName;
-            string surname = _view.Surname;
-            string address = _view.Address;
-            string phone = _view.Phone;
-            string username = _view.Username;
-            string password = _view.Password;
-            string type = "client";
+            string name = _workerAddUserView.UserName;
+            string surname = _workerAddUserView.Surname;
+            string address = _workerAddUserView.Address;
+            string phone = _workerAddUserView.Phone;
+            string username = _workerAddUserView.Username;
+            string password = _workerAddUserView.Password;
+            string type = "worker";
 
             if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(surname) ||
                 string.IsNullOrEmpty(address) || string.IsNullOrEmpty(phone) ||
                 string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                _view.ShowMessage("Wszystkie pola muszą być uzupełnione.");
+                _workerAddUserView.ShowMessage("All fields must be completed.");
                 return;
             }
-            
+            if (_model.IsUsernameTaken(username))
+            {
+                _workerAddUserView.ShowMessage("Username is already taken.");
+                return;
+            }
+
             User user = new User
             {
                 Name = name,
@@ -53,11 +60,11 @@ namespace StoreManagement.Presenters
 
             if (_model.AddUserToDB(user))
             {
-                _view.ShowMessage("Dodano nowego użytkownika.");
+                _workerAddUserView.ShowMessage("A new user has been added.");
             }
             else
             {
-                _view.ShowMessage("Błąd podczas dodawania.");
+                _workerAddUserView.ShowMessage("Error adding.");
             }
         }
     }

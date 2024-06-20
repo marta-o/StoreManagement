@@ -39,7 +39,19 @@ namespace StoreManagement.DAL.Repositories
                 return result > 0;
             }
         }
-
+        public static bool IsUsernameInDB(string username)
+        {
+            using (var connection = DBConnection.Instance.CreateConnection())
+            {
+                string CHECK_USERNAME = "SELECT COUNT(*) FROM Users WHERE Username = @Username";
+                MySqlCommand command = new MySqlCommand(CHECK_USERNAME, connection);
+                command.Parameters.AddWithValue("@Username", username);
+                connection.Open();
+                var count = Convert.ToInt32(command.ExecuteScalar());
+                connection.Close();
+                return count > 0;
+            }
+        }
         // to chyba nie bedzie potrzebne
         /*public static bool EditUserInDB(User user, int idUser)
         {

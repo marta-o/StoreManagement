@@ -45,6 +45,8 @@
             this.label_name = new System.Windows.Forms.Label();
             this.textBox_name = new System.Windows.Forms.TextBox();
             this.label_add = new System.Windows.Forms.Label();
+            this.textBox_phone = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // splitter_worker_add
@@ -52,8 +54,9 @@
             this.splitter_worker_add.BackColor = System.Drawing.Color.Orchid;
             this.splitter_worker_add.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.splitter_worker_add.Location = new System.Drawing.Point(0, 0);
+            this.splitter_worker_add.Margin = new System.Windows.Forms.Padding(4);
             this.splitter_worker_add.Name = "splitter_worker_add";
-            this.splitter_worker_add.Size = new System.Drawing.Size(365, 574);
+            this.splitter_worker_add.Size = new System.Drawing.Size(485, 677);
             this.splitter_worker_add.TabIndex = 0;
             this.splitter_worker_add.TabStop = false;
             // 
@@ -61,9 +64,10 @@
             // 
             this.button_availability.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button_availability.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_availability.Location = new System.Drawing.Point(69, 27);
+            this.button_availability.Location = new System.Drawing.Point(92, 33);
+            this.button_availability.Margin = new System.Windows.Forms.Padding(4);
             this.button_availability.Name = "button_availability";
-            this.button_availability.Size = new System.Drawing.Size(223, 61);
+            this.button_availability.Size = new System.Drawing.Size(297, 75);
             this.button_availability.TabIndex = 3;
             this.button_availability.Text = "AVAILABILITY";
             this.button_availability.UseVisualStyleBackColor = false;
@@ -72,9 +76,10 @@
             // 
             this.button_orders.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button_orders.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.button_orders.Location = new System.Drawing.Point(69, 106);
+            this.button_orders.Location = new System.Drawing.Point(92, 130);
+            this.button_orders.Margin = new System.Windows.Forms.Padding(4);
             this.button_orders.Name = "button_orders";
-            this.button_orders.Size = new System.Drawing.Size(223, 59);
+            this.button_orders.Size = new System.Drawing.Size(297, 73);
             this.button_orders.TabIndex = 4;
             this.button_orders.Text = "ORDERS";
             this.button_orders.UseVisualStyleBackColor = false;
@@ -83,9 +88,10 @@
             // 
             this.button_add_employee.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button_add_employee.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.button_add_employee.Location = new System.Drawing.Point(69, 393);
+            this.button_add_employee.Location = new System.Drawing.Point(92, 484);
+            this.button_add_employee.Margin = new System.Windows.Forms.Padding(4);
             this.button_add_employee.Name = "button_add_employee";
-            this.button_add_employee.Size = new System.Drawing.Size(223, 59);
+            this.button_add_employee.Size = new System.Drawing.Size(297, 73);
             this.button_add_employee.TabIndex = 5;
             this.button_add_employee.Text = "ADD EMPLOYEE";
             this.button_add_employee.UseVisualStyleBackColor = false;
@@ -94,41 +100,46 @@
             // 
             this.button_logout.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button_logout.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.button_logout.Location = new System.Drawing.Point(69, 471);
+            this.button_logout.Location = new System.Drawing.Point(92, 580);
+            this.button_logout.Margin = new System.Windows.Forms.Padding(4);
             this.button_logout.Name = "button_logout";
-            this.button_logout.Size = new System.Drawing.Size(223, 59);
+            this.button_logout.Size = new System.Drawing.Size(297, 73);
             this.button_logout.TabIndex = 6;
             this.button_logout.Text = "LOGOUT";
             this.button_logout.UseVisualStyleBackColor = false;
             // 
             // textBox_username
             // 
-            this.textBox_username.Location = new System.Drawing.Point(701, 328);
+            this.textBox_username.Location = new System.Drawing.Point(935, 404);
+            this.textBox_username.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_username.Name = "textBox_username";
-            this.textBox_username.Size = new System.Drawing.Size(238, 20);
+            this.textBox_username.Size = new System.Drawing.Size(316, 22);
             this.textBox_username.TabIndex = 35;
             // 
             // textBox_surname
             // 
-            this.textBox_surname.Location = new System.Drawing.Point(701, 221);
+            this.textBox_surname.Location = new System.Drawing.Point(935, 252);
+            this.textBox_surname.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_surname.Name = "textBox_surname";
-            this.textBox_surname.Size = new System.Drawing.Size(238, 20);
+            this.textBox_surname.Size = new System.Drawing.Size(316, 22);
             this.textBox_surname.TabIndex = 34;
             // 
             // maskedTextBox_password
             // 
-            this.maskedTextBox_password.Location = new System.Drawing.Point(701, 386);
+            this.maskedTextBox_password.Location = new System.Drawing.Point(935, 475);
+            this.maskedTextBox_password.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTextBox_password.Name = "maskedTextBox_password";
-            this.maskedTextBox_password.Size = new System.Drawing.Size(238, 20);
+            this.maskedTextBox_password.Size = new System.Drawing.Size(316, 22);
             this.maskedTextBox_password.TabIndex = 33;
             // 
             // label_password
             // 
             this.label_password.AutoSize = true;
             this.label_password.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_password.Location = new System.Drawing.Point(574, 383);
+            this.label_password.Location = new System.Drawing.Point(765, 471);
+            this.label_password.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_password.Name = "label_password";
-            this.label_password.Size = new System.Drawing.Size(98, 21);
+            this.label_password.Size = new System.Drawing.Size(122, 28);
             this.label_password.TabIndex = 32;
             this.label_password.Text = "PASSWORD";
             // 
@@ -136,9 +147,10 @@
             // 
             this.label_username.AutoSize = true;
             this.label_username.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_username.Location = new System.Drawing.Point(574, 327);
+            this.label_username.Location = new System.Drawing.Point(765, 402);
+            this.label_username.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_username.Name = "label_username";
-            this.label_username.Size = new System.Drawing.Size(98, 21);
+            this.label_username.Size = new System.Drawing.Size(121, 28);
             this.label_username.TabIndex = 31;
             this.label_username.Text = "USERNAME";
             // 
@@ -148,17 +160,19 @@
             this.label_address.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label_address.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_address.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label_address.Location = new System.Drawing.Point(574, 275);
+            this.label_address.Location = new System.Drawing.Point(765, 338);
+            this.label_address.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_address.Name = "label_address";
-            this.label_address.Size = new System.Drawing.Size(76, 20);
+            this.label_address.Size = new System.Drawing.Size(97, 25);
             this.label_address.TabIndex = 30;
             this.label_address.Text = "ADDRESS";
             // 
             // textBox_address
             // 
-            this.textBox_address.Location = new System.Drawing.Point(701, 275);
+            this.textBox_address.Location = new System.Drawing.Point(935, 338);
+            this.textBox_address.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_address.Name = "textBox_address";
-            this.textBox_address.Size = new System.Drawing.Size(238, 20);
+            this.textBox_address.Size = new System.Drawing.Size(316, 22);
             this.textBox_address.TabIndex = 29;
             // 
             // button_add
@@ -166,20 +180,23 @@
             this.button_add.BackColor = System.Drawing.Color.Orchid;
             this.button_add.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_add.ForeColor = System.Drawing.Color.Black;
-            this.button_add.Location = new System.Drawing.Point(664, 449);
+            this.button_add.Location = new System.Drawing.Point(885, 553);
+            this.button_add.Margin = new System.Windows.Forms.Padding(4);
             this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(223, 60);
+            this.button_add.Size = new System.Drawing.Size(297, 74);
             this.button_add.TabIndex = 28;
             this.button_add.Text = "ADD EMPLOYEE";
             this.button_add.UseVisualStyleBackColor = false;
+            this.button_add.Click += new System.EventHandler(this.button_add_Click);
             // 
             // label_surname
             // 
             this.label_surname.AutoSize = true;
             this.label_surname.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_surname.Location = new System.Drawing.Point(574, 218);
+            this.label_surname.Location = new System.Drawing.Point(765, 252);
+            this.label_surname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_surname.Name = "label_surname";
-            this.label_surname.Size = new System.Drawing.Size(89, 21);
+            this.label_surname.Size = new System.Drawing.Size(110, 28);
             this.label_surname.TabIndex = 27;
             this.label_surname.Text = "SURNAME";
             // 
@@ -189,17 +206,19 @@
             this.label_name.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label_name.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_name.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label_name.Location = new System.Drawing.Point(574, 161);
+            this.label_name.Location = new System.Drawing.Point(765, 198);
+            this.label_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_name.Name = "label_name";
-            this.label_name.Size = new System.Drawing.Size(54, 20);
+            this.label_name.Size = new System.Drawing.Size(68, 25);
             this.label_name.TabIndex = 26;
             this.label_name.Text = "NAME";
             // 
             // textBox_name
             // 
-            this.textBox_name.Location = new System.Drawing.Point(701, 161);
+            this.textBox_name.Location = new System.Drawing.Point(935, 198);
+            this.textBox_name.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_name.Name = "textBox_name";
-            this.textBox_name.Size = new System.Drawing.Size(238, 20);
+            this.textBox_name.Size = new System.Drawing.Size(316, 22);
             this.textBox_name.TabIndex = 25;
             // 
             // label_add
@@ -208,18 +227,41 @@
             this.label_add.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label_add.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_add.ForeColor = System.Drawing.Color.Black;
-            this.label_add.Location = new System.Drawing.Point(613, 57);
+            this.label_add.Location = new System.Drawing.Point(817, 70);
+            this.label_add.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_add.Name = "label_add";
-            this.label_add.Size = new System.Drawing.Size(284, 47);
+            this.label_add.Size = new System.Drawing.Size(351, 60);
             this.label_add.TabIndex = 24;
             this.label_add.Text = "ADD EMPLOYEE";
             // 
+            // textBox_phone
+            // 
+            this.textBox_phone.Location = new System.Drawing.Point(935, 294);
+            this.textBox_phone.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_phone.Name = "textBox_phone";
+            this.textBox_phone.Size = new System.Drawing.Size(316, 22);
+            this.textBox_phone.TabIndex = 36;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(765, 294);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 25);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "PHONE";
+            // 
             // WorkerAddUserView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1200, 550);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox_phone);
             this.Controls.Add(this.textBox_username);
             this.Controls.Add(this.textBox_surname);
             this.Controls.Add(this.maskedTextBox_password);
@@ -237,8 +279,9 @@
             this.Controls.Add(this.button_orders);
             this.Controls.Add(this.button_availability);
             this.Controls.Add(this.splitter_worker_add);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "WorkerAddUserView";
-            this.Text = "WorkerAddUserView";
+            this.Size = new System.Drawing.Size(1600, 677);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,5 +306,7 @@
         private System.Windows.Forms.Label label_name;
         private System.Windows.Forms.TextBox textBox_name;
         private System.Windows.Forms.Label label_add;
+        private System.Windows.Forms.TextBox textBox_phone;
+        private System.Windows.Forms.Label label1;
     }
 }

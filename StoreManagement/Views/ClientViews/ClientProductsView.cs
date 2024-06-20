@@ -39,6 +39,7 @@ namespace StoreManagement.Views
                 listBox_client_product.Items.Add(item.Name);
             }
         }
+        //do zmiany (tak jak jest w WorkerProductsView)
         public List<Clothes> GetSelectedClothes()
         {
             var selectedClothes = new List<Clothes>();
@@ -61,13 +62,11 @@ namespace StoreManagement.Views
             string selectedType = comboBox_type.SelectedItem?.ToString();
             string selectedColor = comboBox_color.SelectedItem?.ToString();
             string selectedSize = comboBox_size.SelectedItem?.ToString();
-            //uint.TryParse(comboBox_price.SelectedItem?.ToString(), out uint selectedPrice);
 
             var filteredClothes = _presenter.Model.LoadAvailableClothes()
                 .Where(c => (string.IsNullOrEmpty(selectedType) || c.Category == selectedType) &&
                             (string.IsNullOrEmpty(selectedColor) || c.Colour == selectedColor) &&
-                            (string.IsNullOrEmpty(selectedSize) || c.Size == selectedSize) /*&&
-                            (selectedPrice == 0 || c.Price <= selectedPrice)*/)
+                            (string.IsNullOrEmpty(selectedSize) || c.Size == selectedSize))
                 .ToList();
 
             DisplayAvailableClothes(filteredClothes);

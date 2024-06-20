@@ -51,7 +51,6 @@ namespace StoreManagement.DAL.Repositories
                 return n == 1;
             }
         }
-
         public static List<Clothes> LoadAvailableClothes()
         {
             List<Clothes> clothes = new List<Clothes>();

@@ -13,18 +13,18 @@ namespace StoreManagement.Presenters
 {
     public class LoginPresenter
     {
-        private ILoginView _loginView;
+        private ILoginView _view;
         private Model _model;
         public LoginPresenter(ILoginView view, Model model)
         {
-            _loginView = view;
+            _view = view;
             _model = model;
         }
 
         public void Login()
         {
-            string username = _loginView.Username;
-            string password = _loginView.Password;
+            string username = _view.Username;
+            string password = _view.Password;
 
             User user = ValidateUser(username, password);
 
@@ -32,19 +32,18 @@ namespace StoreManagement.Presenters
             {
                 if (user.Type.ToLower() == "client")
                 {
-                    _loginView.NavigateToClientView(user.Id);
+                    _view.NavigateToClientView(user.Id);
                 }
                 else if (user.Type.ToLower() == "worker")
                 {
-                    _loginView.NavigateToWorkerView(user.Id);
+                    _view.NavigateToWorkerView(user.Id);
                 }
             }
             else
             {
-                _loginView.ShowMessage("Niepoprawne dane logowania. Spróbuj ponownie.");
+                _view.ShowMessage("Niepoprawne dane logowania. Spróbuj ponownie.");
             }
         }
-
         private User ValidateUser(string username, string password)
         {
             return _model.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
