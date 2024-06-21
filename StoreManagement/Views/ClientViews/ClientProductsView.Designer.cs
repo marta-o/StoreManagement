@@ -128,7 +128,7 @@ namespace StoreManagement.Views
             this.comboBox_type.Items.AddRange(new object[] {
             "trousers",
             "dress",
-            "tshirt",
+            "t-shirt",
             "skirt",
             "shorts",
             "sweater",

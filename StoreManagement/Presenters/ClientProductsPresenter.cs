@@ -1,20 +1,13 @@
 ﻿using StoreManagement.Views.ClientViews;
 using StoreManagement.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using StoreManagement.DAL.Entities;
 
 namespace StoreManagement.Presenters
 {
     public class ClientProductsPresenter
     {
-        private IClientProductsView _view;
-        private Model _model;
-        private int _clientId;
+        private readonly IClientProductsView _view;
+        private readonly Model _model;
+        private readonly int _clientId;
         public ClientProductsPresenter(IClientProductsView clientProductsView, Model model, int clientId)
         {
             _view = clientProductsView;
@@ -25,29 +18,17 @@ namespace StoreManagement.Presenters
         public Model Model => _model;
         public void LoadAvailableClothes()
         {
-            var clothes = _model.LoadAvailableClothes();
-            _view.DisplayAvailableClothes(clothes);
+            _view.DisplayAvailableClothes(_model.LoadAvailableClothes());
         }
         public void AddToCart()
         { 
             var selectedClothes = _view.GetSelectedClothes();
             if (selectedClothes != null)
             {
+                _model.AddToCart(selectedClothes);
                 selectedClothes.Amount--;
                 _model.UpdateClothes(selectedClothes);
-                _model.AddToCart(selectedClothes);
-                _view.ShowMessage($"{selectedClothes.Name} added to cart");
-                /*if (selectedClothes.Amount > 0)
-                {
-                    selectedClothes.Amount--;
-                    _model.UpdateClothes(selectedClothes);
-                    _model.AddToCart(selectedClothes);
-                    _view.ShowMessage($"{selectedClothes.Name} added to cart");
-                }
-                else
-                {
-                    _view.ShowMessage("This item is out of stock.");
-                }*/
+                _view.ShowMessage("Item added to cart");
             }
             LoadAvailableClothes();
         }

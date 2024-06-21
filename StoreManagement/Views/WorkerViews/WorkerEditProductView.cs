@@ -17,8 +17,8 @@ namespace StoreManagement.Views
 {
     public partial class WorkerEditProductView : UserControl, IWorkerEditProductView
     {
-        private WorkerEditProductPresenter _presenter;
-        private Clothes _clothes;
+        private readonly WorkerEditProductPresenter _presenter;
+        private readonly Clothes _clothes;
         public WorkerEditProductView(Model model, Clothes clothes)
         {
             InitializeComponent();
@@ -29,14 +29,12 @@ namespace StoreManagement.Views
 
         public int ProductId => _clothes.Id;
         public string ProductName => textBox_name.Text;
-        public string Type => comboBox_type.SelectedItem?.ToString();
+        public string Category => comboBox_type.SelectedItem?.ToString();
         public string Colour => comboBox_colour.SelectedItem?.ToString();
-        public int Price => int.Parse(textBox_price.Text);
+        public string Price => textBox_price.Text;
         public string ProductSize => comboBox_size.SelectedItem?.ToString();
-        public int Amount => int.Parse(textBox_amount.Text);
-
+        public string Amount => textBox_amount.Text;
         public event EventHandler SaveProduct;
-
         private void Button_save_Click(object sender, EventArgs e)
         {
             SaveProduct?.Invoke(this, EventArgs.Empty);
@@ -57,45 +55,33 @@ namespace StoreManagement.Views
         public void ClearForm()
         {
             textBox_name.Text = "";
-            comboBox_type.Text = "";
-            comboBox_colour.Text = "";
+            comboBox_type.SelectedIndex = -1;
+            comboBox_colour.SelectedIndex = -1;
             textBox_price.Text = "";
-            comboBox_size.Text = "";
+            comboBox_size.SelectedIndex = -1;
             textBox_amount.Text = "";
         }
-        // boczne przyciski
+
+        // Side buttons
         private void Button_products_Click(object sender, EventArgs e)
         {
             MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new WorkerProductsView(_presenter.Model));
-            }
+            mainForm?.ShowUserControl(new WorkerProductsView(_presenter.Model));
         }
         private void Button_orders_Click(object sender, EventArgs e)
         {
             MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new WorkerOrdersView(_presenter.Model));
-            }
+            mainForm?.ShowUserControl(new WorkerOrdersView(_presenter.Model));
         }
         private void Button_users_Click(object sender, EventArgs e)
         {
             MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new WorkerUsersView(_presenter.Model));
-            }
+            mainForm?.ShowUserControl(new WorkerUsersView(_presenter.Model));
         }
         public void Button_logout_Click(object sender, EventArgs e)
         {
-            //_presenter.Logout();
             MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new LoginView(new Model()));
-            }
+            mainForm?.ShowUserControl(new LoginView(new Model()));
         }
     }
 }

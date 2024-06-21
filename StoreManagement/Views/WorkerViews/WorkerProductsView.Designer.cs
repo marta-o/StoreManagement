@@ -50,9 +50,10 @@
             this.comboBox_size = new System.Windows.Forms.ComboBox();
             this.comboBox_color = new System.Windows.Forms.ComboBox();
             this.comboBox_type = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label_amount = new System.Windows.Forms.Label();
             this.pictureBox_product = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_amount = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_products)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_product)).BeginInit();
             this.SuspendLayout();
@@ -303,7 +304,7 @@
             this.comboBox_type.Items.AddRange(new object[] {
             "trousers",
             "dress",
-            "tshirt",
+            "t-shirt",
             "skirt",
             "shorts",
             "sweater",
@@ -314,25 +315,6 @@
             this.comboBox_type.Name = "comboBox_type";
             this.comboBox_type.Size = new System.Drawing.Size(160, 36);
             this.comboBox_type.TabIndex = 20;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "trousers",
-            "dress",
-            "tshirt",
-            "skirt",
-            "shorts",
-            "sweater",
-            "hoodie",
-            "blouse"});
-            this.comboBox1.Location = new System.Drawing.Point(1107, 112);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 36);
-            this.comboBox1.TabIndex = 27;
             // 
             // label_amount
             // 
@@ -356,14 +338,29 @@
             this.pictureBox_product.TabIndex = 29;
             this.pictureBox_product.TabStop = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 30;
+            // 
+            // textBox_amount
+            // 
+            this.textBox_amount.Location = new System.Drawing.Point(1111, 115);
+            this.textBox_amount.Name = "textBox_amount";
+            this.textBox_amount.Size = new System.Drawing.Size(149, 22);
+            this.textBox_amount.TabIndex = 31;
+            // 
             // WorkerProductsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.Controls.Add(this.textBox_amount);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox_product);
             this.Controls.Add(this.label_amount);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label_size);
             this.Controls.Add(this.label_colour);
             this.Controls.Add(this.label_type);
@@ -405,7 +402,6 @@
         private System.Windows.Forms.ComboBox comboBox_size;
         private System.Windows.Forms.ComboBox comboBox_color;
         private System.Windows.Forms.ComboBox comboBox_type;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label_amount;
         private System.Windows.Forms.PictureBox pictureBox_product;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
@@ -415,5 +411,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn size;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn amount;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_amount;
     }
 }

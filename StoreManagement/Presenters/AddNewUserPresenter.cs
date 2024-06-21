@@ -1,26 +1,19 @@
-﻿using MySql.Data.MySqlClient;
-using StoreManagement.Views.StartViews;
-using StoreManagement.DAL;
+﻿using StoreManagement.Views.StartViews;
 using StoreManagement.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using StoreManagement.DAL.Entities;
 
 namespace StoreManagement.Presenters
 {
     public class AddNewUserPresenter
     {
-        private IAddNewUserView _view;
-        private Model _model;
+        private readonly IAddNewUserView _view;
+        private readonly Model _model;
         public AddNewUserPresenter(IAddNewUserView view, Model model)
         {
             _view = view;
             _model = model;
             _view.AddUser += Create;
-
         }
         public void Create(object sender, EventArgs e)
         {
@@ -36,7 +29,7 @@ namespace StoreManagement.Presenters
                 string.IsNullOrEmpty(address) || string.IsNullOrEmpty(phone) ||
                 string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                _view.ShowMessage("Wszystkie pola muszą być uzupełnione.");
+                _view.ShowMessage("All fields must be filled.");
                 return;
             }
             
@@ -53,11 +46,11 @@ namespace StoreManagement.Presenters
 
             if (_model.AddUserToDB(user))
             {
-                _view.ShowMessage("Dodano nowego użytkownika.");
+                _view.ShowMessage("New user added successfully.");
             }
             else
             {
-                _view.ShowMessage("Błąd podczas dodawania.");
+                _view.ShowMessage("Error while adding user.");
             }
         }
     }

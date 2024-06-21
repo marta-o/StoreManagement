@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StoreManagement.Views.WorkerViews
 {
@@ -14,8 +10,8 @@ namespace StoreManagement.Views.WorkerViews
         string Phone { get; }
         string Username { get; }
         string Password { get; }
-        string Type { get; }
         event EventHandler AddUser;
+        void ClearFields();
         void ShowMessage(string message);
     }
 }

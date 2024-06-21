@@ -2,10 +2,6 @@
 using StoreManagement.Models;
 using StoreManagement.Views.WorkerViews;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StoreManagement.Presenters
 {
@@ -23,19 +19,22 @@ namespace StoreManagement.Presenters
         public Model Model => _model;
         private void SaveProduct(object sender, EventArgs e)
         {
+            if (!ValidateInput())
+                return;
+
             int productId = _view.ProductId;
             string productName = _view.ProductName;
-            string type = _view.Type;
+            string category = _view.Category;
             string colour = _view.Colour;
-            int price = _view.Price;
+            int price = int.Parse(_view.Price);
             string productSize = _view.ProductSize;
-            int amount = _view.Amount;
+            int amount = int.Parse(_view.Amount);
 
             Clothes newClothes = new Clothes
             {
                 Id = productId,
                 Name = productName,
-                Category = type,
+                Category = category,
                 Colour = colour,
                 Price = price,
                 Size = productSize,
@@ -51,6 +50,21 @@ namespace StoreManagement.Presenters
             {
                 _view.ShowMessage("Error changing product.");
             }
+        }
+        private bool ValidateInput()
+        {
+            int temp;
+            if (!int.TryParse(_view.Price, out temp))
+            {
+                _view.ShowMessage("Invalid price format.");
+                return false;
+            }
+            if (!int.TryParse(_view.Amount, out temp))
+            {
+                _view.ShowMessage("Invalid amount format.");
+                return false;
+            }
+            return true;
         }
     }
 }

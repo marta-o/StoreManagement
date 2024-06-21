@@ -3,21 +3,14 @@ using StoreManagement.Presenters;
 using StoreManagement.Views.StartViews;
 using StoreManagement.Views.WorkerViews;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StoreManagement.Views
 {
     public partial class WorkerAddUserView : UserControl, IWorkerAddUserView
     {
-        private WorkerAddUserPresenter _presenter;
+        private readonly WorkerAddUserPresenter _presenter;
 
         public WorkerAddUserView(Model model)
         {
@@ -34,13 +27,20 @@ namespace StoreManagement.Views
         public string Phone => textBox_phone.Text;
         public string Username => textBox_username.Text;
         public string Password => maskedTextBox_password.Text;
-        public string Type => "worker";
         public event EventHandler AddUser;
         public void ShowMessage(string message)
         {
             MessageBox.Show(message);
         }
-
+        public void ClearFields()
+        {
+            textBox_name.Text = "";
+            textBox_surname.Text = "";
+            textBox_address.Text = "";
+            textBox_phone.Text = "";
+            textBox_username.Text = "";
+            maskedTextBox_password.Text = "";
+        }
         private void Button_add_Click(object sender, EventArgs e)
         {
             AddUser?.Invoke(this, EventArgs.Empty);
@@ -70,38 +70,27 @@ namespace StoreManagement.Views
                 textBox_username.SelectionStart = textBox_username.Text.Length;
             }
         }
+
+        // Side buttons
         private void Button_products_Click(object sender, EventArgs e)
         {
             MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new WorkerProductsView(_presenter.Model));
-            }
+            mainForm?.ShowUserControl(new WorkerProductsView(_presenter.Model));
         }
         private void Button_orders_Click(object sender, EventArgs e)
         {
             MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new WorkerOrdersView(_presenter.Model));
-            }
+            mainForm?.ShowUserControl(new WorkerOrdersView(_presenter.Model));
         }
         private void Button_users_Click(object sender, EventArgs e)
         {
             MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new WorkerUsersView(_presenter.Model));
-            }
+            mainForm?.ShowUserControl(new WorkerUsersView(_presenter.Model));
         }
         public void Button_logout_Click(object sender, EventArgs e)
         {
-            //_presenter.Logout();
             MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new LoginView(new Model()));
-            }
+            mainForm?.ShowUserControl(new LoginView(new Model()));
         }
     }
 }

@@ -74,6 +74,7 @@
             this.button_logout.TabIndex = 63;
             this.button_logout.Text = "LOGOUT";
             this.button_logout.UseVisualStyleBackColor = false;
+            this.button_logout.Click += new System.EventHandler(this.Button_logout_Click);
             // 
             // button_users
             // 
@@ -98,6 +99,7 @@
             this.button_orders.TabIndex = 61;
             this.button_orders.Text = "ORDERS";
             this.button_orders.UseVisualStyleBackColor = false;
+            this.button_orders.Click += new System.EventHandler(this.Button_orders_Click);
             // 
             // button_products
             // 
@@ -110,6 +112,7 @@
             this.button_products.TabIndex = 60;
             this.button_products.Text = "PRODUCTS";
             this.button_products.UseVisualStyleBackColor = false;
+            this.button_products.Click += new System.EventHandler(this.Button_products_Click);
             // 
             // splitter_worker_add
             // 
@@ -202,20 +205,15 @@
             this.button_add.TabIndex = 66;
             this.button_add.Text = "ADD EMPLOYEE";
             this.button_add.UseVisualStyleBackColor = false;
+            this.button_add.Click += new System.EventHandler(this.Button_add_Click);
             // 
             // comboBox_users
             // 
             this.comboBox_users.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox_users.FormattingEnabled = true;
             this.comboBox_users.Items.AddRange(new object[] {
-            "trousers",
-            "dress",
-            "tshirt",
-            "skirt",
-            "shorts",
-            "sweater",
-            "hoodie",
-            "blouse"});
+            "client",
+            "worker"});
             this.comboBox_users.Location = new System.Drawing.Point(587, 507);
             this.comboBox_users.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_users.Name = "comboBox_users";
@@ -233,6 +231,7 @@
             this.button_filter.TabIndex = 67;
             this.button_filter.Text = "FILTER";
             this.button_filter.UseVisualStyleBackColor = false;
+            this.button_filter.Click += new System.EventHandler(this.Button_filter_Click);
             // 
             // pictureBox1
             // 

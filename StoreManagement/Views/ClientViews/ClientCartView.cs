@@ -5,20 +5,15 @@ using StoreManagement.Views.ClientViews;
 using StoreManagement.Views.StartViews;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StoreManagement.Views
 {
     public partial class ClientCartView : UserControl, IClientCartView
     {
-        private ClientCartPresenter _presenter;
-        private int _clientId;
+        private readonly ClientCartPresenter _presenter;
+        private readonly int _clientId;
         public ClientCartView(Model model, int clientId)
         {
             InitializeComponent();
@@ -62,39 +57,32 @@ namespace StoreManagement.Views
         private void Button_remove_Click(object sender, EventArgs e)
         {
             var selectedClothes = GetSelectedClothes();
+            if (selectedClothes != null)
+            {
             _presenter.RemoveFromCart(selectedClothes);
+            }
         }
         private void Button_purchase_Click(object sender, EventArgs e)
         {
             Purchase?.Invoke(this, EventArgs.Empty);
         }
-        
 
-        //boczne przyciski
+        // Side buttons
         public void Button_shopping_Click(object sender, EventArgs e)
         {
             MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new ClientProductsView(_presenter.Model, _clientId));
-            }
+            mainForm?.ShowUserControl(new ClientProductsView(_presenter.Model, _clientId));
         }
         public void Button_my_orders_Click(object sender, EventArgs e)
         {
             MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new ClientOrdersView(_presenter.Model, _clientId));
-            }
+            mainForm?.ShowUserControl(new ClientOrdersView(_presenter.Model, _clientId));
         }
         public void Button_logout_Click(object sender, EventArgs e)
         {
             _presenter.Logout();
             MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new LoginView(new Model()));
-            }
+            mainForm?.ShowUserControl(new LoginView(new Model()));
         }
     }
 }

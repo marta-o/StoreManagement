@@ -5,20 +5,14 @@ using StoreManagement.Views.WorkerViews;
 using StoreManagement.DAL.Entities;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StoreManagement.Views
 {
     public partial class WorkerOrdersView : UserControl, IWorkerOrdersView
     {
-        private WorkerOrdersPresenter _presenter;
+        private readonly WorkerOrdersPresenter _presenter;
         public WorkerOrdersView(Model model)
         {
             InitializeComponent();
@@ -29,7 +23,7 @@ namespace StoreManagement.Views
         {
             MessageBox.Show(message);
         }
-        public void DisplayAllOrders(List<Order> orders)
+        public void DisplayOrders(List<Order> orders)
         {
             dataGridView_orders.Rows.Clear();
             foreach (Order order in orders)
@@ -43,7 +37,6 @@ namespace StoreManagement.Views
             {
                 var selectedRow = dataGridView_orders.SelectedRows[0];
                 int id = int.Parse(selectedRow.Cells["Id"].Value.ToString());
-
                 return _presenter.Model.Orders.FirstOrDefault(order => order.Id == id);
             }
             else
@@ -57,31 +50,21 @@ namespace StoreManagement.Views
             DeleteOrder?.Invoke(this, EventArgs.Empty);
         }
 
-        //boczne przyciski
+        // Side buttons
         private void Button_products_Click(object sender, EventArgs e)
         {
             MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new WorkerProductsView(_presenter.Model));
-            }
+            mainForm?.ShowUserControl(new WorkerProductsView(_presenter.Model));
         }
         private void Button_users_Click(object sender, EventArgs e)
         {
             MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new WorkerUsersView(_presenter.Model));
-            }
+            mainForm?.ShowUserControl(new WorkerUsersView(_presenter.Model));
         }
-        public void Button_logout_Click(object sender, EventArgs e)
+        private void Button_logout_Click(object sender, EventArgs e)
         {
-            //_presenter.Logout();
             MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new LoginView(new Model()));
-            }
+            mainForm?.ShowUserControl(new LoginView(new Model()));
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using StoreManagement.DAL.Entities;
-using System;
 using System.Collections.Generic;
 
 namespace StoreManagement.Views.WorkerViews

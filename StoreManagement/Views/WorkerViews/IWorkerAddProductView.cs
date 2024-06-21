@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StoreManagement.Views.WorkerViews
 {
@@ -11,9 +7,9 @@ namespace StoreManagement.Views.WorkerViews
         string ProductName { get; }
         string Type { get; }  
         string Colour { get; }
-        int Price { get; }  
+        string Price { get; }  
         string ProductSize { get; }
-        int Amount { get; }
+        string Amount { get; }
         event EventHandler SaveProduct;
         void ShowMessage(string message);
         void ClearForm();

@@ -2,18 +2,14 @@
 using StoreManagement.Models;
 using StoreManagement.Views.ClientViews;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StoreManagement.Presenters
 {
     public class ClientOrdersPresenter
     {
-        private IClientOrdersView _view;
-        private Model _model;
-        private int _clientId;
+        private readonly IClientOrdersView _view;
+        private readonly Model _model;
+        private readonly int _clientId;
 
         public ClientOrdersPresenter(IClientOrdersView view, Model model, int clientId)
         {
@@ -34,12 +30,12 @@ namespace StoreManagement.Presenters
             Order order = _view.GetSelectedOrder();
             if (_model.DeleteOrder(order))
             {
-                _view.ShowMessage("Order deleted");
+                _view.ShowMessage("Order deleted.");
                 LoadOrders();
             }
             else
             {
-                _view.ShowMessage("Error deleting.");
+                _view.ShowMessage("Error while deleting order.");
             }
         }
         public void Logout()

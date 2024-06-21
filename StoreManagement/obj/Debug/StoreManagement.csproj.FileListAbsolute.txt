@@ -49,3 +49,4 @@ C:\Users\marta\OneDrive - biurox365ml\Pulpit\studia\sem4\programowanie_obiektowe
 C:\Users\marta\OneDrive - biurox365ml\Pulpit\studia\sem4\programowanie_obiektowe\projekt\StoreManagement\StoreManagement\obj\Debug\StoreManagement.Views.WorkerEditProductView.resources
 C:\Users\marta\OneDrive - biurox365ml\Pulpit\studia\sem4\programowanie_obiektowe\projekt\StoreManagement\StoreManagement\obj\Debug\StoreManagement.Views.WorkerOrdersView.resources
 C:\Users\marta\OneDrive - biurox365ml\Pulpit\studia\sem4\programowanie_obiektowe\projekt\StoreManagement\StoreManagement\obj\Debug\StoreManagement.Views.WorkerViews.WorkerUsersView.resources
+C:\Users\marta\OneDrive - biurox365ml\Pulpit\studia\sem4\programowanie_obiektowe\projekt\StoreManagement\StoreManagement\obj\Debug\StoreManagement.Views.WorkerAddUserView.resources

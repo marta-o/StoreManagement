@@ -1,20 +1,14 @@
 ﻿using StoreManagement.Views.StartViews;
 using StoreManagement.DAL.Entities;
-using StoreManagement.DAL;
 using StoreManagement.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
 
 namespace StoreManagement.Presenters
 {
     public class LoginPresenter
     {
-        private ILoginView _view;
-        private Model _model;
+        private readonly ILoginView _view;
+        private readonly Model _model;
         public LoginPresenter(ILoginView view, Model model)
         {
             _view = view;
@@ -41,7 +35,7 @@ namespace StoreManagement.Presenters
             }
             else
             {
-                _view.ShowMessage("Niepoprawne dane logowania. Spróbuj ponownie.");
+                _view.ShowMessage("Invalid login credentials. Please try again.");
             }
         }
         private User ValidateUser(string username, string password)

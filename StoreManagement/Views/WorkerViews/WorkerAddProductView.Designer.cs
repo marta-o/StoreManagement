@@ -145,6 +145,18 @@
             // 
             this.comboBox_colour.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox_colour.FormattingEnabled = true;
+            this.comboBox_colour.Items.AddRange(new object[] {
+            "white",
+            "black",
+            "green",
+            "red",
+            "blue",
+            "orange",
+            "yellow",
+            "purple",
+            "pink",
+            "gray",
+            "brown"});
             this.comboBox_colour.Location = new System.Drawing.Point(959, 246);
             this.comboBox_colour.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_colour.Name = "comboBox_colour";
@@ -155,6 +167,15 @@
             // 
             this.comboBox_type.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox_type.FormattingEnabled = true;
+            this.comboBox_type.Items.AddRange(new object[] {
+            "trousers",
+            "dress",
+            "t-shirt",
+            "skirt",
+            "shorts",
+            "sweater",
+            "hoodie",
+            "blouse"});
             this.comboBox_type.Location = new System.Drawing.Point(959, 197);
             this.comboBox_type.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_type.Name = "comboBox_type";
@@ -236,6 +257,10 @@
             // 
             this.comboBox_size.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox_size.FormattingEnabled = true;
+            this.comboBox_size.Items.AddRange(new object[] {
+            "s",
+            "l",
+            "m"});
             this.comboBox_size.Location = new System.Drawing.Point(959, 295);
             this.comboBox_size.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_size.Name = "comboBox_size";

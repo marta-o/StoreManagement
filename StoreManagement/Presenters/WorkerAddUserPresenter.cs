@@ -1,30 +1,23 @@
-﻿using MySql.Data.MySqlClient;
-using StoreManagement.Views.WorkerViews;
-using StoreManagement.DAL;
+﻿using StoreManagement.Views.WorkerViews;
 using StoreManagement.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using StoreManagement.DAL.Entities;
-
 
 namespace StoreManagement.Presenters
 {
     public class WorkerAddUserPresenter
     {
-        private IWorkerAddUserView _view;
-        private Model _model;
+        private readonly IWorkerAddUserView _view;
+        private readonly Model _model;
 
         public WorkerAddUserPresenter(IWorkerAddUserView view, Model model)
         {
             _view = view;
             _model = model;
-            _view.AddUser += Create;
+            _view.AddUser += AddUserHandler;
         }
         public Model Model => _model;
-        public void Create(object sender, EventArgs e)
+        public void AddUserHandler(object sender, EventArgs e)
         {
             string name = _view.UserName;
             string surname = _view.Surname;
@@ -34,18 +27,8 @@ namespace StoreManagement.Presenters
             string password = _view.Password;
             string type = "worker";
 
-            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(surname) ||
-                string.IsNullOrEmpty(address) || string.IsNullOrEmpty(phone) ||
-                string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-            {
-                _view.ShowMessage("All fields must be completed.");
+            if (!ValidateInput())
                 return;
-            }
-            if (_model.IsUsernameTaken(username))
-            {
-                _view.ShowMessage("Username is already taken.");
-                return;
-            }
 
             User user = new User
             {
@@ -60,12 +43,32 @@ namespace StoreManagement.Presenters
 
             if (_model.AddUserToDB(user))
             {
+                _view.ClearFields();
                 _view.ShowMessage("A new user has been added.");
             }
             else
             {
                 _view.ShowMessage("Error adding.");
             }
+        }
+        private bool ValidateInput()
+        {
+            if (string.IsNullOrEmpty(_view.UserName) ||
+                string.IsNullOrEmpty(_view.Surname) ||
+                string.IsNullOrEmpty(_view.Address) ||
+                string.IsNullOrEmpty(_view.Phone) ||
+                string.IsNullOrEmpty(_view.Username) ||
+                string.IsNullOrEmpty(_view.Password))
+            {
+                _view.ShowMessage("All fields must be completed.");
+                return false;
+            }
+            if (_model.IsUsernameTaken(_view.Username))
+            {
+                _view.ShowMessage("Username is already taken.");
+                return false;
+            }
+            return true;
         }
     }
 }

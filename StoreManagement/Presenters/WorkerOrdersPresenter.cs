@@ -2,10 +2,6 @@
 using StoreManagement.Models;
 using StoreManagement.DAL.Entities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StoreManagement.Presenters
 {
@@ -24,19 +20,19 @@ namespace StoreManagement.Presenters
         private void LoadOrders()
         {
             var orders = _model.LoadAllOrders();
-            _view.DisplayAllOrders(orders);
+            _view.DisplayOrders(orders);
         }
         private void DeleteOrderHandler(object sender, EventArgs e)
         {
             Order order = _view.GetSelectedOrder();
-            if (_model.DeleteOrder(order))
+            if (order != null && _model.DeleteOrder(order))
             {
                 _view.ShowMessage("Order deleted");
                 LoadOrders();
             }
             else
             {
-                _view.ShowMessage("Error deleting.");
+                _view.ShowMessage("Error deleting order.");
             }
         }
     }

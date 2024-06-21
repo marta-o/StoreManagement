@@ -230,6 +230,9 @@
     <EmbeddedResource Include="Views\WorkerViews\WorkerAddProductView.resx">
       <DependentUpon>WorkerAddProductView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\WorkerViews\WorkerAddUserView.resx">
+      <DependentUpon>WorkerAddUserView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\WorkerViews\WorkerEditProductView.resx">
       <DependentUpon>WorkerEditProductView.cs</DependentUpon>
     </EmbeddedResource>

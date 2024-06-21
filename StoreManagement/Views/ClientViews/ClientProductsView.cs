@@ -1,16 +1,11 @@
 ﻿using StoreManagement.DAL.Entities;
-using StoreManagement.DAL.Repositories;
 using StoreManagement.Presenters;
 using StoreManagement.Views.ClientViews;
 using StoreManagement.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using StoreManagement.Views.StartViews;
 
@@ -18,8 +13,8 @@ namespace StoreManagement.Views
 {
     public partial class ClientProductsView : UserControl, IClientProductsView
     {
-        private ClientProductsPresenter _presenter;
-        private int _clientId;
+        private readonly ClientProductsPresenter _presenter;
+        private readonly int _clientId;
         public ClientProductsView(Model model, int clientId)
         {
             InitializeComponent();
@@ -74,31 +69,22 @@ namespace StoreManagement.Views
             DisplayAvailableClothes(filteredClothes);
         }
 
-        // boczne przyciski
+        // Side buttons
         public void Button_cart_Click(object sender, EventArgs e)
         {
             MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new ClientCartView(_presenter.Model, _clientId));
-            }
+            mainForm?.ShowUserControl(new ClientCartView(_presenter.Model, _clientId));
         }
         public void Button_my_orders_Click(object sender, EventArgs e)
         {
             MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new ClientOrdersView(_presenter.Model, _clientId));
-            }
+            mainForm?.ShowUserControl(new ClientOrdersView(_presenter.Model, _clientId));
         }
         public void Button_logout_Click(object sender, EventArgs e)
         {
             _presenter.Logout();
             MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new LoginView(new Model()));
-            }
+            mainForm?.ShowUserControl(new LoginView(new Model()));
         }
     }
 }

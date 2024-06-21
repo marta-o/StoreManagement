@@ -22,7 +22,7 @@ namespace StoreManagement.Views
         {
             InitializeComponent();
             _presenter = new WorkerProductsPresenter(this, model);
-            DisplayAllClothes(_presenter.Model.LoadAllClothes());
+            _presenter.LoadClothes();
         }
         public void DisplayAllClothes(List<Clothes> clothes)
         {
@@ -56,10 +56,7 @@ namespace StoreManagement.Views
         private void Button_add_Click(object sender, EventArgs e)
         {
             MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new WorkerAddProductView(_presenter.Model));
-            }
+            mainForm?.ShowUserControl(new WorkerAddProductView(_presenter.Model));
         }
         private void Button_edit_Click(object sender, EventArgs e)
         {
@@ -67,11 +64,7 @@ namespace StoreManagement.Views
             if (selectedClothes != null)
             {
                 MainForm mainForm = this.ParentForm as MainForm;
-                if (mainForm != null)
-                {
-                    WorkerEditProductView editProductView = new WorkerEditProductView(_presenter.Model, selectedClothes);
-                    mainForm.ShowUserControl(editProductView);
-                }
+                mainForm?.ShowUserControl(new WorkerEditProductView(_presenter.Model, selectedClothes));
             }
         }
 
@@ -80,42 +73,27 @@ namespace StoreManagement.Views
             string selectedType = comboBox_type.SelectedItem?.ToString();
             string selectedColor = comboBox_color.SelectedItem?.ToString();
             string selectedSize = comboBox_size.SelectedItem?.ToString();
-            // dodac filtrowanie po amount
-            var filteredClothes = _presenter.Model.LoadAvailableClothes()
-                .Where(c => (string.IsNullOrEmpty(selectedType) || c.Category == selectedType) &&
-                            (string.IsNullOrEmpty(selectedColor) || c.Colour == selectedColor) &&
-                            (string.IsNullOrEmpty(selectedSize) || c.Size == selectedSize))
-                .ToList();
+            string selectedAmount = textBox_amount.Text.Trim();
 
+            var filteredClothes = _presenter.FilterClothes(selectedType, selectedColor, selectedSize, selectedAmount);
             DisplayAllClothes(filteredClothes);
         }
 
-
-        //boczne przyciski
+        // Side buttons
         private void Button_orders_Click(object sender, EventArgs e)
         {
             MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new WorkerOrdersView(_presenter.Model));
-            }
+            mainForm?.ShowUserControl(new WorkerOrdersView(_presenter.Model));
         }
         private void Button_users_Click(object sender, EventArgs e)
         {
             MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new WorkerUsersView(_presenter.Model));
-            }
+            mainForm?.ShowUserControl(new WorkerUsersView(_presenter.Model));
         }
         public void Button_logout_Click(object sender, EventArgs e)
         {
-            //_presenter.Logout();
             MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new LoginView(new Model()));
-            }
+            mainForm?.ShowUserControl(new LoginView(new Model()));
         }
     }
 }

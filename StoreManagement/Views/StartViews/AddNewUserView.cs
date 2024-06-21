@@ -1,13 +1,6 @@
 ﻿using StoreManagement.Presenters;
 using StoreManagement.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
@@ -15,7 +8,7 @@ namespace StoreManagement.Views.StartViews
 {
     public partial class AddNewUserView : UserControl, IAddNewUserView
     {
-        private AddNewUserPresenter _presenter;
+        private readonly AddNewUserPresenter _presenter;
         public AddNewUserView(Model model)
         {
             InitializeComponent();
@@ -38,20 +31,10 @@ namespace StoreManagement.Views.StartViews
         {
             MessageBox.Show(message);
         }
-                
         private void Button_sign_in_Click(object sender, EventArgs e)
         {
             AddUser?.Invoke(this, EventArgs.Empty);
         }
-        private void Button_log_in_Click(object sender, EventArgs e)
-        {
-            MainForm mainForm = this.ParentForm as MainForm;
-            if (mainForm != null)
-            {
-                mainForm.ShowUserControl(new LoginView(new Model()));
-            }
-        }
-
         private void ValidatePhoneNumber(object sender, EventArgs e)
         {
             if (!Regex.IsMatch(textBox_phone.Text, @"^\d{0,9}$"))
@@ -76,6 +59,12 @@ namespace StoreManagement.Views.StartViews
                 textBox_username.Text = textBox_username.Text.Replace(" ", string.Empty);
                 textBox_username.SelectionStart = textBox_username.Text.Length;
             }
+        }
+        // Side buttons
+        private void Button_log_in_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = this.ParentForm as MainForm;
+            mainForm?.ShowUserControl(new LoginView(new Model()));
         }
     }
 }
