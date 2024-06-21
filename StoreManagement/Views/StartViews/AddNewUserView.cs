@@ -39,12 +39,11 @@ namespace StoreManagement.Views.StartViews
             MessageBox.Show(message);
         }
                 
-        private void button_sign_in_Click(object sender, EventArgs e)
+        private void Button_sign_in_Click(object sender, EventArgs e)
         {
             AddUser?.Invoke(this, EventArgs.Empty);
         }
-
-        private void button_log_in_Click(object sender, EventArgs e)
+        private void Button_log_in_Click(object sender, EventArgs e)
         {
             MainForm mainForm = this.ParentForm as MainForm;
             if (mainForm != null)

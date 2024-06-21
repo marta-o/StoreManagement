@@ -28,23 +28,26 @@ namespace StoreManagement.Presenters
             var clothes = _model.LoadAvailableClothes();
             _view.DisplayAvailableClothes(clothes);
         }
-
         public void AddToCart()
-        {
+        { 
             var selectedClothes = _view.GetSelectedClothes();
-            foreach (var clothes in selectedClothes)
+            if (selectedClothes != null)
             {
-                if (clothes.Amount > 0)
+                selectedClothes.Amount--;
+                _model.UpdateClothes(selectedClothes);
+                _model.AddToCart(selectedClothes);
+                _view.ShowMessage($"{selectedClothes.Name} added to cart");
+                /*if (selectedClothes.Amount > 0)
                 {
-                    clothes.Amount--;
-                    _model.UpdateClothes(clothes);
-                    _model.AddToCart(clothes);
-                    _view.ShowMessage($"{clothes.Name} added to cart");
+                    selectedClothes.Amount--;
+                    _model.UpdateClothes(selectedClothes);
+                    _model.AddToCart(selectedClothes);
+                    _view.ShowMessage($"{selectedClothes.Name} added to cart");
                 }
                 else
                 {
                     _view.ShowMessage("This item is out of stock.");
-                }
+                }*/
             }
             LoadAvailableClothes();
         }

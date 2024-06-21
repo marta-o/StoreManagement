@@ -1,5 +1,6 @@
 ﻿using StoreManagement.Models;
 using StoreManagement.Presenters;
+using StoreManagement.Views.StartViews;
 using StoreManagement.Views.WorkerViews;
 using System;
 using System.Collections.Generic;
@@ -16,11 +17,9 @@ namespace StoreManagement.Views
 {
     public partial class WorkerAddUserView : UserControl, IWorkerAddUserView
     {
-        private Model _model;
-        private MainForm _mainForm;
         private WorkerAddUserPresenter _presenter;
 
-        public WorkerAddUserView(Model model, MainForm mainForm)
+        public WorkerAddUserView(Model model)
         {
             InitializeComponent();
             _presenter = new WorkerAddUserPresenter(this, model);
@@ -42,7 +41,7 @@ namespace StoreManagement.Views
             MessageBox.Show(message);
         }
 
-        private void button_add_Click(object sender, EventArgs e)
+        private void Button_add_Click(object sender, EventArgs e)
         {
             AddUser?.Invoke(this, EventArgs.Empty);
         }
@@ -69,6 +68,39 @@ namespace StoreManagement.Views
                 ShowMessage("Username cannot contain spaces.");
                 textBox_username.Text = textBox_username.Text.Replace(" ", string.Empty);
                 textBox_username.SelectionStart = textBox_username.Text.Length;
+            }
+        }
+        private void Button_products_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = this.ParentForm as MainForm;
+            if (mainForm != null)
+            {
+                mainForm.ShowUserControl(new WorkerProductsView(_presenter.Model));
+            }
+        }
+        private void Button_orders_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = this.ParentForm as MainForm;
+            if (mainForm != null)
+            {
+                mainForm.ShowUserControl(new WorkerOrdersView(_presenter.Model));
+            }
+        }
+        private void Button_users_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = this.ParentForm as MainForm;
+            if (mainForm != null)
+            {
+                mainForm.ShowUserControl(new WorkerUsersView(_presenter.Model));
+            }
+        }
+        public void Button_logout_Click(object sender, EventArgs e)
+        {
+            //_presenter.Logout();
+            MainForm mainForm = this.ParentForm as MainForm;
+            if (mainForm != null)
+            {
+                mainForm.ShowUserControl(new LoginView(new Model()));
             }
         }
     }

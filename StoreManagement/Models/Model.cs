@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using StoreManagement.DAL.Entities;
 using StoreManagement.DAL.Repositories;
 using System.Collections.ObjectModel;
+using System.Windows.Forms;
 namespace StoreManagement.Models
 {
     public class Model
@@ -60,13 +61,56 @@ namespace StoreManagement.Models
             }
             return false;
         }
+        public bool EditClothesToDB(Clothes clothes)
+        {
+            var existingClothes = Clothes.FirstOrDefault(c => c.Id == clothes.Id);
+            if (existingClothes != null)
+            {
+                if (ClothesRepository.UpdateClothes(clothes))
+                {
+                    existingClothes.Name = clothes.Name;
+                    existingClothes.Category = clothes.Category;
+                    existingClothes.Colour = clothes.Colour;
+                    existingClothes.Price = clothes.Price;
+                    existingClothes.Size = clothes.Size;
+                    existingClothes.Amount = clothes.Amount;
+                    return true;
+                }
+            }
+            return false;
+        }
+        public bool DeleteOrder(Order order)
+        {
+            var existingOrder = Orders.FirstOrDefault(o => o.Id == order.Id);
+            if (existingOrder != null)
+            {
+                if (OrdersRepository.DeleteOrderInDB(existingOrder))
+                {
+                    Orders.Remove(existingOrder);
+                    return true;
+                }
+            }
+            return false;
+        }
         public List<Clothes> LoadAllClothes()
         {
             return ClothesRepository.LoadAllClothes();
         }
+        public List<User> LoadAllUsers()
+        {
+            return UsersRepository.LoadAllUsers();
+        }
+        public List<Order> LoadAllOrders()
+        {
+            return OrdersRepository.LoadAllOrders();
+        }
         public List<Clothes> LoadAvailableClothes()
         {
             return ClothesRepository.LoadAvailableClothes();
+        }
+        public List<Order> LoadUsersOrders(int clientId)
+        {
+            return OrdersRepository.LoadUsersOrders(clientId);
         }
         public void UpdateClothes(Clothes clothes)
         {
@@ -88,15 +132,6 @@ namespace StoreManagement.Models
         {
             CartItems.Clear();
         }
-        public void UpdateClothesAmount(Clothes clothes, int amountChange)
-        {
-            var item = Clothes.FirstOrDefault(c => c.Id == clothes.Id);
-            if (item != null)
-            {
-                item.Amount += amountChange;
-                UpdateClothes(item);
-            }
-        }
         public void RestoreCartItems()
         {
             foreach (var clothes in CartItems)
@@ -106,7 +141,6 @@ namespace StoreManagement.Models
             }
             ClearCart();
         }
-
         public bool IsUsernameTaken(string username)
         {
             return UsersRepository.IsUsernameInDB(username);

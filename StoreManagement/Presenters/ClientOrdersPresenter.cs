@@ -20,15 +20,31 @@ namespace StoreManagement.Presenters
             _view = view;
             _model = model;
             _clientId = clientId;
+            _view.DeleteOrder += DeleteOrderHandler;
             LoadOrders();
         }
-        public Model Model
-        {
-            get { return _model; }
-        }
+        public Model Model => _model;
         public void LoadOrders() 
-        { 
-
+        {
+            var orders = _model.LoadUsersOrders(_clientId);
+            _view.DisplayUsersOrders(orders);
+        }
+        private void DeleteOrderHandler(object sender, EventArgs e)
+        {
+            Order order = _view.GetSelectedOrder();
+            if (_model.DeleteOrder(order))
+            {
+                _view.ShowMessage("Order deleted");
+                LoadOrders();
+            }
+            else
+            {
+                _view.ShowMessage("Error deleting.");
+            }
+        }
+        public void Logout()
+        {
+            _model.RestoreCartItems();
         }
     }
 }

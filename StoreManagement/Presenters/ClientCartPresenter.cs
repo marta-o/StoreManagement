@@ -21,6 +21,7 @@ namespace StoreManagement.Presenters
             _view = view;
             _model = model;
             _clientId = clientId;
+            _view.Purchase += MakeOrder;
             LoadCartItems();
         }
         public Model Model => _model;
@@ -35,7 +36,7 @@ namespace StoreManagement.Presenters
             _model.UpdateClothes(clothes);
             LoadCartItems();
         }
-        public void PurchaseItems()
+        public void MakeOrder(object sender, EventArgs e)
         {
             if (_model.CartItems.Count <= 5)
             {
@@ -49,17 +50,23 @@ namespace StoreManagement.Presenters
                     Thing4 = _model.CartItems.ElementAtOrDefault(3)?.Id,
                     Thing5 = _model.CartItems.ElementAtOrDefault(4)?.Id
                 };
-                OrdersRepository.AddNewOrderToDB(order);
-                _model.ClearCart();
-                _view.ShowMessage("Purchase completed successfully!");
-                LoadCartItems();
+
+                if (_model.AddOrderToDB(order)) 
+                {
+                    _model.ClearCart();
+                    _view.ShowMessage("Purchase completed successfully!");
+                    LoadCartItems();
+                }
+                else
+                {
+                    _view.ShowMessage("Error with the order.");
+                }
             }
             else
             {
                 _view.ShowMessage("You can only purchase up to 5 items per order.");
             }
         }
-
         public void Logout()
         {
             _model.RestoreCartItems();

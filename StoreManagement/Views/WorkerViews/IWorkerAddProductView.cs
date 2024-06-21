@@ -11,7 +11,7 @@ namespace StoreManagement.Views.WorkerViews
         string ProductName { get; }
         string Type { get; }  
         string Colour { get; }
-        string Price { get; }  
+        int Price { get; }  
         string ProductSize { get; }
         int Amount { get; }
         event EventHandler SaveProduct;

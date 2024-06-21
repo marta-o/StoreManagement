@@ -26,7 +26,6 @@ namespace StoreManagement.DAL.Repositories
             }
             return clothes;
         }
-
         public static bool AddNewClothesToDB(Clothes clothes)
         {
             using (var connection = DBConnection.Instance.CreateConnection())
@@ -67,28 +66,5 @@ namespace StoreManagement.DAL.Repositories
             }
             return clothes;
         }
-
-        /*public static bool EditClothesInDB(Clothes clothes, int idClothes)
-        {
-            bool state = false;
-            using (var connection = DBConnection.Instance.Connection)
-            {
-                string EDIT_CLOTHES = $"UPDATE clothes SET Name='{clothes.Name}', Category='{clothes.Category}', Size='{clothes.Size}', Colour='{clothes.Colour}', " +
-                    $"Price={clothes.Price}, Amount={clothes.Amount}, WHERE Id={idClothes}";
-                MySqlCommand command = new MySqlCommand(EDIT_CLOTHES, connection);
-                connection.Open();
-                var n = command.ExecuteNonQuery();
-                if (n == 1)
-                    state = true;
-                connection.Close();
-            }
-            return state;
-        }
-
-        public static bool RemoveClothesFromDB(Clothes clothes)
-        {
-            //nie wiem co tu ma byc na razie
-            return true;
-        }*/
     }
 }

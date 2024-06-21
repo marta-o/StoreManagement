@@ -119,9 +119,17 @@
     <Compile Include="Presenters\LoginPresenter.cs" />
     <Compile Include="Presenters\WorkerAddProductPresenter.cs" />
     <Compile Include="Presenters\WorkerAddUserPresenter.cs" />
+    <Compile Include="Presenters\WorkerEditProductPresenter.cs" />
+    <Compile Include="Presenters\WorkerOrdersPresenter.cs" />
     <Compile Include="Presenters\WorkerProductsPresenter.cs" />
+    <Compile Include="Presenters\WorkerUsersPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Views\ClientViews\ClientCartView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -156,6 +164,13 @@
     </Compile>
     <Compile Include="Views\StartViews\LoginView.Designer.cs">
       <DependentUpon>LoginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WorkerViews\IWorkerUsersView.cs" />
+    <Compile Include="Views\WorkerViews\WorkerUsersView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\WorkerViews\WorkerUsersView.Designer.cs">
+      <DependentUpon>WorkerUsersView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\WorkerViews\IWorkerAddProductView.cs" />
     <Compile Include="Views\WorkerViews\IWorkerAddUserView.cs" />
@@ -194,21 +209,38 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="Views\ClientViews\ClientCartView.resx">
+      <DependentUpon>ClientCartView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ClientViews\ClientOrdersView.resx">
+      <DependentUpon>ClientOrdersView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ClientViews\ClientProductsView.resx">
       <DependentUpon>ClientProductsView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\StartViews\AddNewUserView.resx">
       <DependentUpon>AddNewUserView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\StartViews\LoginView.resx">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\WorkerViews\WorkerAddProductView.resx">
+      <DependentUpon>WorkerAddProductView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\WorkerViews\WorkerEditProductView.resx">
+      <DependentUpon>WorkerEditProductView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\WorkerViews\WorkerOrdersView.resx">
+      <DependentUpon>WorkerOrdersView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\WorkerViews\WorkerProductsView.resx">
       <DependentUpon>WorkerProductsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\WorkerViews\WorkerUsersView.resx">
+      <DependentUpon>WorkerUsersView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -224,6 +256,35 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\addWorker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editProduct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\myOrders.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orders.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\products.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addProduct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

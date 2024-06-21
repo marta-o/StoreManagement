@@ -14,36 +14,36 @@ namespace StoreManagement.Presenters
 {
     public class WorkerAddUserPresenter
     {
-        private IWorkerAddUserView _workerAddUserView;
+        private IWorkerAddUserView _view;
         private Model _model;
 
         public WorkerAddUserPresenter(IWorkerAddUserView view, Model model)
         {
-            _workerAddUserView = view;
+            _view = view;
             _model = model;
-            _workerAddUserView.AddUser += Create;
-
+            _view.AddUser += Create;
         }
+        public Model Model => _model;
         public void Create(object sender, EventArgs e)
         {
-            string name = _workerAddUserView.UserName;
-            string surname = _workerAddUserView.Surname;
-            string address = _workerAddUserView.Address;
-            string phone = _workerAddUserView.Phone;
-            string username = _workerAddUserView.Username;
-            string password = _workerAddUserView.Password;
+            string name = _view.UserName;
+            string surname = _view.Surname;
+            string address = _view.Address;
+            string phone = _view.Phone;
+            string username = _view.Username;
+            string password = _view.Password;
             string type = "worker";
 
             if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(surname) ||
                 string.IsNullOrEmpty(address) || string.IsNullOrEmpty(phone) ||
                 string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                _workerAddUserView.ShowMessage("All fields must be completed.");
+                _view.ShowMessage("All fields must be completed.");
                 return;
             }
             if (_model.IsUsernameTaken(username))
             {
-                _workerAddUserView.ShowMessage("Username is already taken.");
+                _view.ShowMessage("Username is already taken.");
                 return;
             }
 
@@ -60,11 +60,11 @@ namespace StoreManagement.Presenters
 
             if (_model.AddUserToDB(user))
             {
-                _workerAddUserView.ShowMessage("A new user has been added.");
+                _view.ShowMessage("A new user has been added.");
             }
             else
             {
-                _workerAddUserView.ShowMessage("Error adding.");
+                _view.ShowMessage("Error adding.");
             }
         }
     }

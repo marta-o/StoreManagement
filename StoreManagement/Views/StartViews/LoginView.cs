@@ -49,11 +49,11 @@ namespace StoreManagement.Views.StartViews
             }
         }
         
-        private void button_login_Click(object sender, EventArgs e)
+        private void Button_login_Click(object sender, EventArgs e)
         {
             _loginPresenter.Login();
         }
-        private void button_create_Click(object sender, EventArgs e)
+        private void Button_create_Click(object sender, EventArgs e)
         {
             Model model = new Model();
             MainForm mainForm = this.ParentForm as MainForm;

@@ -10,7 +10,7 @@ namespace StoreManagement.Views.ClientViews
     public interface IClientProductsView
     {
         void DisplayAvailableClothes(List<Clothes> clothes);
-        List<Clothes> GetSelectedClothes();
+        Clothes GetSelectedClothes();
         void ShowMessage(string message);
     }
 }

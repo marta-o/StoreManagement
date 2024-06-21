@@ -26,7 +26,22 @@ namespace StoreManagement.DAL.Repositories
             }
             return orders;
         }
+        public static List<Order> LoadUsersOrders(int clientId)
+        {
+            List<Order> orders = new List<Order>();
 
+            using (var connection = DBConnection.Instance.CreateConnection())
+            {
+                string ALL_ORDERS = "SELECT * FROM orders WHERE IdClient = " + clientId;
+                MySqlCommand command = new MySqlCommand(ALL_ORDERS, connection);
+                connection.Open();
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                    orders.Add(new Order(reader));
+                connection.Close();
+            }
+            return orders;
+        }
         public static bool AddNewOrderToDB(Order order)
         {
             using (var connection = DBConnection.Instance.CreateConnection())
@@ -38,20 +53,18 @@ namespace StoreManagement.DAL.Repositories
                 connection.Close();
                 return result > 0;
             }
-
-            /*bool state = false;
-            using (var connection = DBConnection.Instance.Connection)
+        }
+        public static bool DeleteOrderInDB(Order order)
+        {
+            using (var connection = DBConnection.Instance.CreateConnection())
             {
-                string ADD_ORDER = "INSERT INTO orders (OrderDate, IdClient, Thing1, Thing2, Thing3, Thing4, Thing5) VALUES ";
-                MySqlCommand command = new MySqlCommand($"{ADD_ORDER} {order.ToInsert()}", connection);
+                string ADD_ORDER = "DELETE FROM Orders WHERE Id =  " + order.Id;
+                MySqlCommand command = new MySqlCommand(ADD_ORDER, connection);
                 connection.Open();
-                var n = command.ExecuteNonQuery();
-                if (n == 1) //nie wiem czy z if (bro mial tu bez if)
-                    state = true;
-                order.Id = (int)command.LastInsertedId;
+                var result = command.ExecuteNonQuery();
                 connection.Close();
+                return result > 0;
             }
-            return state;*/
         }
     }
 }

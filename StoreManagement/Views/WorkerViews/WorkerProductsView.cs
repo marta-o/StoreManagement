@@ -26,36 +26,34 @@ namespace StoreManagement.Views
         }
         public void DisplayAllClothes(List<Clothes> clothes)
         {
-            listBox_products.Items.Clear();
+            dataGridView_products.Rows.Clear();
             foreach (var item in clothes)
             {
-                listBox_products.Items.Add($"{item.Name} ({item.Category}) - Size: {item.Size}, Colour: {item.Colour}, Price: {item.Price}, Amount: {item.Amount}");
+                dataGridView_products.Rows.Add(item.Id, item.Name, item.Category, item.Colour, item.Size, item.Price, item.Amount);
             }
-        }
-        public Clothes GetSelectedClothes()
-        {
-            if (listBox_products.SelectedItem != null)
-            {
-                string selectedItem = listBox_products.SelectedItem.ToString();
-                string name = selectedItem.Split('(')[0].Trim();
-                string category = selectedItem.Split('(')[1].Split(')')[0].Trim();
-
-                foreach (var cloth in _presenter.Model.Clothes)
-                {
-                    if (cloth.Name == name && cloth.Category == category)
-                    {
-                        return cloth;
-                    }
-                }
-            }
-            return null;
         }
         public void ShowMessage(string message)
         {
             MessageBox.Show(message);
         }
+        public Clothes GetSelectedClothes()
+        {
+            if (dataGridView_products.SelectedRows.Count > 0)
+            {
+                var selectedRow = dataGridView_products.SelectedRows[0];
+                string name = selectedRow.Cells["Name"].Value.ToString();
+                string type = selectedRow.Cells["Type"].Value.ToString();
 
-        private void button_add_Click(object sender, EventArgs e)
+                return _presenter.Model.Clothes.FirstOrDefault(cloth => cloth.Name == name && cloth.Category == type);
+            }
+            else
+            {
+                ShowMessage("Please select a product.");
+                return null;
+            }
+        }
+        
+        private void Button_add_Click(object sender, EventArgs e)
         {
             MainForm mainForm = this.ParentForm as MainForm;
             if (mainForm != null)
@@ -63,22 +61,54 @@ namespace StoreManagement.Views
                 mainForm.ShowUserControl(new WorkerAddProductView(_presenter.Model));
             }
         }
-
-        //boczne przyciski
-        private void button_orders_Click(object sender, EventArgs e)
+        private void Button_edit_Click(object sender, EventArgs e)
         {
-
+            Clothes selectedClothes = GetSelectedClothes();
+            if (selectedClothes != null)
+            {
+                MainForm mainForm = this.ParentForm as MainForm;
+                if (mainForm != null)
+                {
+                    WorkerEditProductView editProductView = new WorkerEditProductView(_presenter.Model, selectedClothes);
+                    mainForm.ShowUserControl(editProductView);
+                }
+            }
         }
 
-        private void button_add_employee_Click(object sender, EventArgs e)
+        private void Button_filter_Click(object sender, EventArgs e)
+        {
+            string selectedType = comboBox_type.SelectedItem?.ToString();
+            string selectedColor = comboBox_color.SelectedItem?.ToString();
+            string selectedSize = comboBox_size.SelectedItem?.ToString();
+            // dodac filtrowanie po amount
+            var filteredClothes = _presenter.Model.LoadAvailableClothes()
+                .Where(c => (string.IsNullOrEmpty(selectedType) || c.Category == selectedType) &&
+                            (string.IsNullOrEmpty(selectedColor) || c.Colour == selectedColor) &&
+                            (string.IsNullOrEmpty(selectedSize) || c.Size == selectedSize))
+                .ToList();
+
+            DisplayAllClothes(filteredClothes);
+        }
+
+
+        //boczne przyciski
+        private void Button_orders_Click(object sender, EventArgs e)
         {
             MainForm mainForm = this.ParentForm as MainForm;
             if (mainForm != null)
             {
-                mainForm.ShowUserControl(new WorkerAddUserView(_presenter.Model, mainForm));
+                mainForm.ShowUserControl(new WorkerOrdersView(_presenter.Model));
             }
         }
-        public void button_logout_Click(object sender, EventArgs e)
+        private void Button_users_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = this.ParentForm as MainForm;
+            if (mainForm != null)
+            {
+                mainForm.ShowUserControl(new WorkerUsersView(_presenter.Model));
+            }
+        }
+        public void Button_logout_Click(object sender, EventArgs e)
         {
             //_presenter.Logout();
             MainForm mainForm = this.ParentForm as MainForm;
@@ -87,17 +117,5 @@ namespace StoreManagement.Views
                 mainForm.ShowUserControl(new LoginView(new Model()));
             }
         }
-
-        /*
-private void button_edit_Click(object sender, EventArgs e)
-{
-Model model = new Model();
-MainForm mainForm = this.ParentForm as MainForm;
-if (mainForm != null)
-{
-mainForm.ShowUserControl(new WorkerEditProductView(model));
-}
-}
-*/
     }
 }

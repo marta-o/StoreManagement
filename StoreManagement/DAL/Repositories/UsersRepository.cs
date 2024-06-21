@@ -26,7 +26,6 @@ namespace StoreManagement.DAL.Repositories
             }
             return users;
         }
-
         public static bool AddNewUserToDB(User user)
         {
             using (var connection = DBConnection.Instance.CreateConnection())
@@ -52,28 +51,5 @@ namespace StoreManagement.DAL.Repositories
                 return count > 0;
             }
         }
-        // to chyba nie bedzie potrzebne
-        /*public static bool EditUserInDB(User user, int idUser)
-        {
-            bool state = false;
-            using (var connection = DBConnection.Instance.Connection)
-            {
-                string EDIT_USER = $"UPDATE users SET Name='{user.Name}', Surname='{user.Surname}', Address='{user.Address}', Phone='{user.Phone}', " +
-                    $"Username='{user.Username}', Password='{user.Password}', Type='{user.Type}' WHERE Id={idUser}";
-                MySqlCommand command = new MySqlCommand(EDIT_USER, connection);
-                connection.Open();
-                var n = command.ExecuteNonQuery();
-                if (n == 1) 
-                    state = true;
-                connection.Close();
-            }
-            return state;
-        }
-
-        public static bool RemoveUserFromDB(User user)
-        {
-            //nie wiem co tu ma byc na razie
-            return true;
-        }*/
     }
 }

@@ -26,44 +26,52 @@ namespace StoreManagement.Views
             _clientId = clientId;
             LoadCartItems();
         }
-        private void LoadCartItems()
-        {
-            _presenter.LoadCartItems();
-        }
+        public event EventHandler Purchase;
         public void ShowMessage(string message)
         {
             MessageBox.Show(message);
         }
+        private void LoadCartItems()
+        {
+            _presenter.LoadCartItems();
+        }
         public void DisplayCartItems(List<Clothes> cartItems)
         {
-            listBox_cart.Items.Clear();
+            dataGridView_cart.Rows.Clear();
             foreach (var item in cartItems)
             {
-                listBox_cart.Items.Add($"{item.Name} - {item.Price}");
+                dataGridView_cart.Rows.Add(item.Name, item.Category, item.Colour, item.Size, item.Price); 
             }
         }
-        private void button_remove_Click(object sender, EventArgs e)
+        public Clothes GetSelectedClothes()
         {
-            if (listBox_cart.SelectedIndex != -1)
+            if (dataGridView_cart.SelectedRows.Count > 0)
             {
-                var selectedIdx = listBox_cart.SelectedIndex;
-                var removedItem = _presenter.Model.CartItems[selectedIdx];
-                _presenter.RemoveFromCart(removedItem);
-                LoadCartItems();
+                var selectedRow = dataGridView_cart.SelectedRows[0];
+                string name = selectedRow.Cells["Name"].Value.ToString();
+                string Type = selectedRow.Cells["Type"].Value.ToString();
+
+                return _presenter.Model.CartItems.FirstOrDefault(cloth => cloth.Name == name && cloth.Category == Type);
             }
             else
             {
-                ShowMessage("Please select an item to remove.");
+                ShowMessage("Please select a product.");
+                return null;
             }
         }
-        private void button_purchase_Click(object sender, EventArgs e)
+        private void Button_remove_Click(object sender, EventArgs e)
         {
-            _presenter.PurchaseItems();
+            var selectedClothes = GetSelectedClothes();
+            _presenter.RemoveFromCart(selectedClothes);
+        }
+        private void Button_purchase_Click(object sender, EventArgs e)
+        {
+            Purchase?.Invoke(this, EventArgs.Empty);
         }
         
 
         //boczne przyciski
-        public void button_shopping_Click(object sender, EventArgs e)
+        public void Button_shopping_Click(object sender, EventArgs e)
         {
             MainForm mainForm = this.ParentForm as MainForm;
             if (mainForm != null)
@@ -71,7 +79,7 @@ namespace StoreManagement.Views
                 mainForm.ShowUserControl(new ClientProductsView(_presenter.Model, _clientId));
             }
         }
-        public void button_my_orders_Click(object sender, EventArgs e)
+        public void Button_my_orders_Click(object sender, EventArgs e)
         {
             MainForm mainForm = this.ParentForm as MainForm;
             if (mainForm != null)
@@ -79,7 +87,7 @@ namespace StoreManagement.Views
                 mainForm.ShowUserControl(new ClientOrdersView(_presenter.Model, _clientId));
             }
         }
-        public void button_logout_Click(object sender, EventArgs e)
+        public void Button_logout_Click(object sender, EventArgs e)
         {
             _presenter.Logout();
             MainForm mainForm = this.ParentForm as MainForm;

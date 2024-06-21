@@ -25,15 +25,9 @@ namespace StoreManagement.Presenters
             string productName = _view.ProductName;
             string type = _view.Type;
             string colour = _view.Colour;
-            string priceText = _view.Price;
+            int price = _view.Price;
             string size = _view.ProductSize;
             int amount = _view.Amount;
-
-            if (!int.TryParse(priceText, out int price))
-            {
-                _view.ShowMessage("Invalid price format or value. Please enter a valid positive number.");
-                return;
-            }
 
             Clothes newClothes = new Clothes
             {

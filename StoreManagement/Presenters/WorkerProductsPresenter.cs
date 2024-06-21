@@ -18,35 +18,13 @@ namespace StoreManagement.Presenters
         {
             _view = view;
             _model = model;
-            LoadAvailableClothes();
+            LoadClothes();
         }
         public Model Model => _model;
-        private void LoadAvailableClothes()
+        private void LoadClothes()
         {
-            var availableClothes = _model.LoadAvailableClothes();
-            _view.DisplayAllClothes(availableClothes);
+            var clothes = _model.LoadAllClothes();
+            _view.DisplayAllClothes(clothes);
         }
-            /*
-            private void AddProduct(object sender, EventArgs e)
-            {
-                // Navigate to WorkerAddProductView with the Model instance
-                _mainForm.ShowUserControl(new WorkerAddProductView(_model));
-            }
-            */
-            /*
-            private void EditProduct(object sender, EventArgs e)
-            {
-                var selectedClothes = _view.GetSelectedClothes();
-                if (selectedClothes != null)
-                {
-                    MainForm mainForm = (MainForm)_view;
-                    mainForm.ShowUserControl(new WorkerEditProductView(selectedClothes));
-                }
-                else
-                {
-                    _view.ShowMessage("Select a product to edit.");
-                }
-            }
-            */
-        }
+    }
 }
