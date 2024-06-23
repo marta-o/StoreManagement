@@ -21,6 +21,8 @@ namespace StoreManagement.Views
             _clientId = clientId;
             LoadCartItems();
         }
+        public string Price { get => label_price.Text; set => label_price.Text = value; }
+
         public event EventHandler Purchase;
         public void ShowMessage(string message)
         {

@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using StoreManagement.DAL.Entities;
+using System;
 using System.Collections.Generic;
 
 namespace StoreManagement.DAL.Repositories
@@ -28,8 +29,9 @@ namespace StoreManagement.DAL.Repositories
 
             using (var connection = DBConnection.Instance.CreateConnection())
             {
-                string ALL_ORDERS = "SELECT * FROM orders WHERE IdClient = " + clientId;
-                MySqlCommand command = new MySqlCommand(ALL_ORDERS, connection);
+                string USER_ORDERS = "SELECT * FROM orders WHERE IdClient = @ClientId";
+                MySqlCommand command = new MySqlCommand(USER_ORDERS, connection);
+                command.Parameters.AddWithValue("@ClientId", clientId);
                 connection.Open();
                 var reader = command.ExecuteReader();
                 while (reader.Read())
@@ -42,20 +44,34 @@ namespace StoreManagement.DAL.Repositories
         {
             using (var connection = DBConnection.Instance.CreateConnection())
             {
-                string ADD_ORDER = "INSERT INTO Orders (OrderDate, IdClient, Thing1, Thing2, Thing3, Thing4, Thing5) VALUES " + order.ToInsert();
+                string ADD_ORDER = "INSERT INTO Orders (OrderDate, IdClient, Thing1, Thing2, Thing3, Thing4, Thing5) VALUES (@OrderDate, @IdClient, @Thing1, @Thing2, @Thing3, @Thing4, @Thing5); SELECT LAST_INSERT_ID();";
                 MySqlCommand command = new MySqlCommand(ADD_ORDER, connection);
+                command.Parameters.AddWithValue("@OrderDate", order.OrderDate);
+                command.Parameters.AddWithValue("@IdClient", order.IdClient);
+                command.Parameters.AddWithValue("@Thing1", order.Thing1);
+                command.Parameters.AddWithValue("@Thing2", order.Thing2);
+                command.Parameters.AddWithValue("@Thing3", order.Thing3);
+                command.Parameters.AddWithValue("@Thing4", order.Thing4);
+                command.Parameters.AddWithValue("@Thing5", order.Thing5);
                 connection.Open();
-                var result = command.ExecuteNonQuery();
+                var result = command.ExecuteScalar();
                 connection.Close();
-                return result > 0;
+
+                if (result != null)
+                {
+                    order.Id = Convert.ToInt32(result);
+                    return true;
+                }
+                return false;
             }
         }
         public static bool DeleteOrderInDB(Order order)
         {
             using (var connection = DBConnection.Instance.CreateConnection())
             {
-                string ADD_ORDER = "DELETE FROM Orders WHERE Id =  " + order.Id;
-                MySqlCommand command = new MySqlCommand(ADD_ORDER, connection);
+                string DELETE_ORDER = "DELETE FROM Orders WHERE Id = @Id";
+                MySqlCommand command = new MySqlCommand(DELETE_ORDER, connection);
+                command.Parameters.AddWithValue("@Id", order.Id);
                 connection.Open();
                 var result = command.ExecuteNonQuery();
                 connection.Close();

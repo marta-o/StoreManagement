@@ -1,4 +1,5 @@
 ﻿using StoreManagement.DAL.Entities;
+using System;
 using System.Collections.Generic;
 
 namespace StoreManagement.Views.WorkerViews
@@ -7,6 +8,7 @@ namespace StoreManagement.Views.WorkerViews
     {
         void DisplayUsers(List<User> users);
         User GetSelectedUsers();
+        event EventHandler DeleteUser;
         void ShowMessage(string message);
     }
 }

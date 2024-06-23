@@ -36,6 +36,7 @@
             this.label_orders = new System.Windows.Forms.Label();
             this.button_cancel = new System.Windows.Forms.Button();
             this.dataGridView_client_orders = new System.Windows.Forms.DataGridView();
+            this.pictureBox_orders = new System.Windows.Forms.PictureBox();
             this.ORDER = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thing1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,7 +44,6 @@
             this.thing3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thing4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thing5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox_orders = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_client_orders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_orders)).BeginInit();
             this.SuspendLayout();
@@ -155,8 +155,20 @@
             this.dataGridView_client_orders.Size = new System.Drawing.Size(912, 324);
             this.dataGridView_client_orders.TabIndex = 26;
             // 
+            // pictureBox_orders
+            // 
+            this.pictureBox_orders.Image = global::StoreManagement.Properties.Resources.myOrders;
+            this.pictureBox_orders.Location = new System.Drawing.Point(495, 4);
+            this.pictureBox_orders.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox_orders.Name = "pictureBox_orders";
+            this.pictureBox_orders.Size = new System.Drawing.Size(167, 154);
+            this.pictureBox_orders.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_orders.TabIndex = 27;
+            this.pictureBox_orders.TabStop = false;
+            // 
             // ORDER
             // 
+            this.ORDER.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.ORDER.FillWeight = 30F;
             this.ORDER.HeaderText = "ORDER";
             this.ORDER.MinimumWidth = 6;
@@ -165,10 +177,10 @@
             // 
             // DATE
             // 
+            this.DATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.DATE.HeaderText = "DATE";
             this.DATE.MinimumWidth = 6;
             this.DATE.Name = "DATE";
-            this.DATE.Width = 73;
             // 
             // thing1
             // 
@@ -204,17 +216,6 @@
             this.thing5.MinimumWidth = 6;
             this.thing5.Name = "thing5";
             this.thing5.Width = 88;
-            // 
-            // pictureBox_orders
-            // 
-            this.pictureBox_orders.Image = global::StoreManagement.Properties.Resources.myOrders;
-            this.pictureBox_orders.Location = new System.Drawing.Point(495, 4);
-            this.pictureBox_orders.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox_orders.Name = "pictureBox_orders";
-            this.pictureBox_orders.Size = new System.Drawing.Size(167, 154);
-            this.pictureBox_orders.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_orders.TabIndex = 27;
-            this.pictureBox_orders.TabStop = false;
             // 
             // ClientOrdersView
             // 

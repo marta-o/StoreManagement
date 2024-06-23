@@ -22,6 +22,12 @@ namespace StoreManagement.Presenters
         public Model Model => _model;
         public void LoadCartItems()
         {
+            int price = 0;
+            foreach (Clothes item  in _model.GetCartItems())
+            {
+                price += item.Price;
+            }
+            _view.Price = price.ToString() + " zł";
             _view.DisplayCartItems(_model.GetCartItems());
         }
         public void RemoveFromCart(Clothes clothes)

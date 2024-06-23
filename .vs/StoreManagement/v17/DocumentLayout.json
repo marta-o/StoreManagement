@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|c:\\users\\marta\\onedrive - biurox365ml\\pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\storemanagement\\storemanagement\\views\\workerviews\\workereditproductview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|solutionrelative:storemanagement\\views\\workerviews\\workereditproductview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|c:\\users\\marta\\onedrive - biurox365ml\\pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\storemanagement\\storemanagement\\presenters\\addnewuserpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{180988AC-393B-45C8-94A5-70C31A071D26}|StoreManagement\\StoreManagement.csproj|solutionrelative:storemanagement\\presenters\\addnewuserpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +27,32 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WorkerEditProductView.cs",
+              "DocumentMoniker": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Views\\WorkerViews\\WorkerEditProductView.cs",
+              "RelativeDocumentMoniker": "StoreManagement\\Views\\WorkerViews\\WorkerEditProductView.cs",
+              "ToolTip": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Views\\WorkerViews\\WorkerEditProductView.cs",
+              "RelativeToolTip": "StoreManagement\\Views\\WorkerViews\\WorkerEditProductView.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAQwCkAAABQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T21:05:40.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddNewUserPresenter.cs",
+              "DocumentMoniker": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Presenters\\AddNewUserPresenter.cs",
+              "RelativeDocumentMoniker": "StoreManagement\\Presenters\\AddNewUserPresenter.cs",
+              "ToolTip": "C:\\Users\\marta\\OneDrive - biurox365ml\\Pulpit\\studia\\sem4\\programowanie_obiektowe\\projekt\\StoreManagement\\StoreManagement\\Presenters\\AddNewUserPresenter.cs",
+              "RelativeToolTip": "StoreManagement\\Presenters\\AddNewUserPresenter.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAYwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T21:05:05.717Z",
+              "EditorCaption": ""
             }
           ]
         },

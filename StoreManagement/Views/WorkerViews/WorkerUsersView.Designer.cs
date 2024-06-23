@@ -46,6 +46,7 @@
             this.comboBox_users = new System.Windows.Forms.ComboBox();
             this.button_filter = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button_delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_users)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -146,62 +147,68 @@
             // 
             // id
             // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.id.HeaderText = "ID";
             this.id.MinimumWidth = 6;
             this.id.Name = "id";
-            this.id.Width = 125;
+            this.id.Width = 49;
             // 
             // name
             // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.name.HeaderText = "NAME";
             this.name.MinimumWidth = 6;
             this.name.Name = "name";
-            this.name.Width = 130;
+            this.name.Width = 75;
             // 
             // surname
             // 
+            this.surname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.surname.HeaderText = "SURNAME";
             this.surname.MinimumWidth = 6;
             this.surname.Name = "surname";
-            this.surname.Width = 130;
+            this.surname.Width = 104;
             // 
             // address
             // 
+            this.address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.address.HeaderText = "ADDRESS";
             this.address.MinimumWidth = 6;
             this.address.Name = "address";
-            this.address.Width = 130;
             // 
             // phone
             // 
+            this.phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.phone.HeaderText = "PHONE";
             this.phone.MinimumWidth = 6;
             this.phone.Name = "phone";
-            this.phone.Width = 130;
+            this.phone.Width = 84;
             // 
             // username
             // 
+            this.username.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.username.HeaderText = "USERNAME";
             this.username.MinimumWidth = 6;
             this.username.Name = "username";
-            this.username.Width = 130;
+            this.username.Width = 113;
             // 
             // type
             // 
+            this.type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.type.HeaderText = "TYPE";
             this.type.MinimumWidth = 6;
             this.type.Name = "type";
-            this.type.Width = 125;
+            this.type.Width = 72;
             // 
             // button_add
             // 
             this.button_add.BackColor = System.Drawing.Color.MediumPurple;
             this.button_add.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_add.ForeColor = System.Drawing.Color.Black;
-            this.button_add.Location = new System.Drawing.Point(1201, 508);
+            this.button_add.Location = new System.Drawing.Point(1261, 507);
             this.button_add.Margin = new System.Windows.Forms.Padding(4);
             this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(297, 74);
+            this.button_add.Size = new System.Drawing.Size(238, 74);
             this.button_add.TabIndex = 66;
             this.button_add.Text = "ADD EMPLOYEE";
             this.button_add.UseVisualStyleBackColor = false;
@@ -227,7 +234,7 @@
             this.button_filter.Location = new System.Drawing.Point(756, 507);
             this.button_filter.Margin = new System.Windows.Forms.Padding(4);
             this.button_filter.Name = "button_filter";
-            this.button_filter.Size = new System.Drawing.Size(223, 36);
+            this.button_filter.Size = new System.Drawing.Size(166, 36);
             this.button_filter.TabIndex = 67;
             this.button_filter.Text = "FILTER";
             this.button_filter.UseVisualStyleBackColor = false;
@@ -244,11 +251,26 @@
             this.pictureBox1.TabIndex = 69;
             this.pictureBox1.TabStop = false;
             // 
+            // button_delete
+            // 
+            this.button_delete.BackColor = System.Drawing.Color.MediumPurple;
+            this.button_delete.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_delete.ForeColor = System.Drawing.Color.Black;
+            this.button_delete.Location = new System.Drawing.Point(1015, 508);
+            this.button_delete.Margin = new System.Windows.Forms.Padding(4);
+            this.button_delete.Name = "button_delete";
+            this.button_delete.Size = new System.Drawing.Size(238, 74);
+            this.button_delete.TabIndex = 70;
+            this.button_delete.Text = "DELETE";
+            this.button_delete.UseVisualStyleBackColor = false;
+            this.button_delete.Click += new System.EventHandler(this.Button_delete_Click);
+            // 
             // WorkerUsersView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.Controls.Add(this.button_delete);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.comboBox_users);
             this.Controls.Add(this.button_filter);
@@ -290,5 +312,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn username;
         private System.Windows.Forms.DataGridViewTextBoxColumn type;
+        private System.Windows.Forms.Button button_delete;
     }
 }

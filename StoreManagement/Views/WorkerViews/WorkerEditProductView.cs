@@ -38,6 +38,8 @@ namespace StoreManagement.Views
         private void Button_save_Click(object sender, EventArgs e)
         {
             SaveProduct?.Invoke(this, EventArgs.Empty);
+            MainForm mainForm = this.ParentForm as MainForm;
+            mainForm?.ShowUserControl(new WorkerProductsView(_presenter.Model));
         }
         public void PopulateForm(Clothes clothes)
         {

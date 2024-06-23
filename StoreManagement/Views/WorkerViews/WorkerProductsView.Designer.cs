@@ -52,8 +52,8 @@
             this.comboBox_type = new System.Windows.Forms.ComboBox();
             this.label_amount = new System.Windows.Forms.Label();
             this.pictureBox_product = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox_amount = new System.Windows.Forms.TextBox();
+            this.button_delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_products)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_product)).BeginInit();
             this.SuspendLayout();
@@ -167,38 +167,42 @@
             // 
             // id
             // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.id.HeaderText = "ID";
             this.id.MinimumWidth = 6;
             this.id.Name = "id";
-            this.id.Width = 125;
+            this.id.Width = 49;
             // 
             // name
             // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.name.HeaderText = "NAME";
             this.name.MinimumWidth = 6;
             this.name.Name = "name";
-            this.name.Width = 110;
             // 
             // type
             // 
+            this.type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.type.HeaderText = "TYPE";
             this.type.MinimumWidth = 6;
             this.type.Name = "type";
-            this.type.Width = 110;
+            this.type.Width = 72;
             // 
             // colour
             // 
+            this.colour.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.colour.HeaderText = "COLOUR";
             this.colour.MinimumWidth = 6;
             this.colour.Name = "colour";
-            this.colour.Width = 110;
+            this.colour.Width = 92;
             // 
             // size
             // 
+            this.size.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.size.HeaderText = "SIZE";
             this.size.MinimumWidth = 6;
             this.size.Name = "size";
-            this.size.Width = 110;
+            this.size.Width = 65;
             // 
             // price
             // 
@@ -209,10 +213,11 @@
             // 
             // amount
             // 
+            this.amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.amount.HeaderText = "AMOUNT";
             this.amount.MinimumWidth = 6;
             this.amount.Name = "amount";
-            this.amount.Width = 110;
+            this.amount.Width = 95;
             // 
             // label_size
             // 
@@ -338,13 +343,6 @@
             this.pictureBox_product.TabIndex = 29;
             this.pictureBox_product.TabStop = false;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 30;
-            // 
             // textBox_amount
             // 
             this.textBox_amount.Location = new System.Drawing.Point(1111, 115);
@@ -352,13 +350,26 @@
             this.textBox_amount.Size = new System.Drawing.Size(149, 22);
             this.textBox_amount.TabIndex = 31;
             // 
+            // button_delete
+            // 
+            this.button_delete.BackColor = System.Drawing.Color.MediumPurple;
+            this.button_delete.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.button_delete.Location = new System.Drawing.Point(896, 508);
+            this.button_delete.Margin = new System.Windows.Forms.Padding(4);
+            this.button_delete.Name = "button_delete";
+            this.button_delete.Size = new System.Drawing.Size(297, 70);
+            this.button_delete.TabIndex = 32;
+            this.button_delete.Text = "DELETE PRODUCT";
+            this.button_delete.UseVisualStyleBackColor = false;
+            this.button_delete.Click += new System.EventHandler(this.Button_delete_Click);
+            // 
             // WorkerProductsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.Controls.Add(this.button_delete);
             this.Controls.Add(this.textBox_amount);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox_product);
             this.Controls.Add(this.label_amount);
             this.Controls.Add(this.label_size);
@@ -404,6 +415,7 @@
         private System.Windows.Forms.ComboBox comboBox_type;
         private System.Windows.Forms.Label label_amount;
         private System.Windows.Forms.PictureBox pictureBox_product;
+        private System.Windows.Forms.TextBox textBox_amount;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn type;
@@ -411,7 +423,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn size;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn amount;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox_amount;
+        private System.Windows.Forms.Button button_delete;
     }
 }

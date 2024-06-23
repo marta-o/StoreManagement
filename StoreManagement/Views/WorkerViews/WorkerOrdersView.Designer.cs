@@ -36,6 +36,7 @@
             this.button_products = new System.Windows.Forms.Button();
             this.label_orders = new System.Windows.Forms.Label();
             this.dataGridView_orders = new System.Windows.Forms.DataGridView();
+            this.pictureBox_order = new System.Windows.Forms.PictureBox();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.client = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,7 +45,6 @@
             this.thing3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thing4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thing5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox_order = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_orders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_order)).BeginInit();
             this.SuspendLayout();
@@ -157,62 +157,6 @@
             this.dataGridView_orders.Size = new System.Drawing.Size(912, 324);
             this.dataGridView_orders.TabIndex = 18;
             // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.Width = 125;
-            // 
-            // date
-            // 
-            this.date.HeaderText = "DATE";
-            this.date.MinimumWidth = 6;
-            this.date.Name = "date";
-            this.date.Width = 110;
-            // 
-            // client
-            // 
-            this.client.HeaderText = "CLIENT";
-            this.client.MinimumWidth = 6;
-            this.client.Name = "client";
-            this.client.Width = 110;
-            // 
-            // thing1
-            // 
-            this.thing1.HeaderText = "THING 1";
-            this.thing1.MinimumWidth = 6;
-            this.thing1.Name = "thing1";
-            this.thing1.Width = 110;
-            // 
-            // thing2
-            // 
-            this.thing2.HeaderText = "THING 2";
-            this.thing2.MinimumWidth = 6;
-            this.thing2.Name = "thing2";
-            this.thing2.Width = 110;
-            // 
-            // thing3
-            // 
-            this.thing3.HeaderText = "THING 3";
-            this.thing3.MinimumWidth = 6;
-            this.thing3.Name = "thing3";
-            this.thing3.Width = 125;
-            // 
-            // thing4
-            // 
-            this.thing4.HeaderText = "THING 4";
-            this.thing4.MinimumWidth = 6;
-            this.thing4.Name = "thing4";
-            this.thing4.Width = 125;
-            // 
-            // thing5
-            // 
-            this.thing5.HeaderText = "THING 5";
-            this.thing5.MinimumWidth = 6;
-            this.thing5.Name = "thing5";
-            this.thing5.Width = 125;
-            // 
             // pictureBox_order
             // 
             this.pictureBox_order.Image = global::StoreManagement.Properties.Resources.orders;
@@ -223,6 +167,69 @@
             this.pictureBox_order.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_order.TabIndex = 19;
             this.pictureBox_order.TabStop = false;
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.Width = 49;
+            // 
+            // date
+            // 
+            this.date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.date.HeaderText = "DATE";
+            this.date.MinimumWidth = 6;
+            this.date.Name = "date";
+            // 
+            // client
+            // 
+            this.client.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.client.HeaderText = "CLIENT";
+            this.client.MinimumWidth = 6;
+            this.client.Name = "client";
+            this.client.Width = 83;
+            // 
+            // thing1
+            // 
+            this.thing1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.thing1.HeaderText = "THING 1";
+            this.thing1.MinimumWidth = 6;
+            this.thing1.Name = "thing1";
+            this.thing1.Width = 88;
+            // 
+            // thing2
+            // 
+            this.thing2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.thing2.HeaderText = "THING 2";
+            this.thing2.MinimumWidth = 6;
+            this.thing2.Name = "thing2";
+            this.thing2.Width = 88;
+            // 
+            // thing3
+            // 
+            this.thing3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.thing3.HeaderText = "THING 3";
+            this.thing3.MinimumWidth = 6;
+            this.thing3.Name = "thing3";
+            this.thing3.Width = 88;
+            // 
+            // thing4
+            // 
+            this.thing4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.thing4.HeaderText = "THING 4";
+            this.thing4.MinimumWidth = 6;
+            this.thing4.Name = "thing4";
+            this.thing4.Width = 88;
+            // 
+            // thing5
+            // 
+            this.thing5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.thing5.HeaderText = "THING 5";
+            this.thing5.MinimumWidth = 6;
+            this.thing5.Name = "thing5";
+            this.thing5.Width = 88;
             // 
             // WorkerOrdersView
             // 

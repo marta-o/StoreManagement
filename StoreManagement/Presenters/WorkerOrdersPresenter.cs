@@ -27,7 +27,7 @@ namespace StoreManagement.Presenters
             Order order = _view.GetSelectedOrder();
             if (order != null && _model.DeleteOrder(order))
             {
-                _view.ShowMessage("Order deleted");
+                _view.ShowMessage("Order deleted.");
                 LoadOrders();
             }
             else

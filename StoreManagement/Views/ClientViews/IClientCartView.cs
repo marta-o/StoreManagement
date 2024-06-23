@@ -9,5 +9,6 @@ namespace StoreManagement.Views.ClientViews
         void DisplayCartItems(List<Clothes> cartItems);
         void ShowMessage(string message);
         event EventHandler Purchase;
+        string Price { get; set; }
     }
 }

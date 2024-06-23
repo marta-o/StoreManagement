@@ -1,6 +1,7 @@
 ﻿using StoreManagement.DAL.Entities;
 using StoreManagement.Models;
 using StoreManagement.Views.WorkerViews;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -14,6 +15,7 @@ namespace StoreManagement.Presenters
         {
             _view = view;
             _model = model;
+            _view.DeleteClothes += DeleteClothesHandler;
             LoadClothes();
         }
         public Model Model => _model;
@@ -21,6 +23,26 @@ namespace StoreManagement.Presenters
         {
             var clothes = _model.LoadAllClothes();
             _view.DisplayAllClothes(clothes);
+        }
+        private void DeleteClothesHandler(object sender, EventArgs e)
+        {
+            try
+            {
+                Clothes clothes = _view.GetSelectedClothes();
+                if (clothes != null && _model.DeleteClothes(clothes))
+                {
+                    _view.ShowMessage("Clothes deleted.");
+                    LoadClothes();
+                }
+            }
+            catch (InvalidOperationException ex)
+            {
+                _view.ShowMessage(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _view.ShowMessage("An unexpected error occurred while deleting the clothes.");
+            }
         }
         public List<Clothes> FilterClothes(string type, string color, string size, string amount)
         {

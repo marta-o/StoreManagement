@@ -18,6 +18,11 @@ namespace StoreManagement.Views.WorkerViews
             InitializeComponent();
             _presenter = new WorkerUsersPresenter(this, model);
         }
+        public event EventHandler DeleteUser;
+        public void ShowMessage(string message)
+        {
+            MessageBox.Show(message);
+        }
         public void DisplayUsers(List<User> users)
         {
             dataGridView_users.Rows.Clear();
@@ -31,16 +36,10 @@ namespace StoreManagement.Views.WorkerViews
             if (dataGridView_users.SelectedRows.Count > 0)
             {
                 var selectedRow = dataGridView_users.SelectedRows[0];
-                string name = selectedRow.Cells["Name"].Value.ToString();
-                string Type = selectedRow.Cells["Type"].Value.ToString();
-
-                return _presenter.Model.Users.FirstOrDefault(user => user.Name == name && user.Type == Type);
+                int id = int.Parse(selectedRow.Cells["Id"].Value.ToString());
+                return _presenter.Model.Users.FirstOrDefault(user => user.Id == id);
             }
             return null;
-        }
-        public void ShowMessage(string message)
-        {
-            MessageBox.Show(message);
         }
         private void Button_filter_Click(object sender, EventArgs e)
         {
@@ -55,6 +54,10 @@ namespace StoreManagement.Views.WorkerViews
         {
             MainForm mainForm = this.ParentForm as MainForm;
             mainForm?.ShowUserControl(new WorkerAddUserView(_presenter.Model));
+        }
+        private void Button_delete_Click(object sender, EventArgs e)
+        {
+            DeleteUser?.Invoke(this, EventArgs.Empty);
         }
 
         // Side buttons

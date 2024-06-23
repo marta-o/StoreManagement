@@ -24,6 +24,11 @@ namespace StoreManagement.Views
             _presenter = new WorkerProductsPresenter(this, model);
             _presenter.LoadClothes();
         }
+        public event EventHandler DeleteClothes;
+        public void ShowMessage(string message)
+        {
+            MessageBox.Show(message);
+        }
         public void DisplayAllClothes(List<Clothes> clothes)
         {
             dataGridView_products.Rows.Clear();
@@ -32,19 +37,13 @@ namespace StoreManagement.Views
                 dataGridView_products.Rows.Add(item.Id, item.Name, item.Category, item.Colour, item.Size, item.Price, item.Amount);
             }
         }
-        public void ShowMessage(string message)
-        {
-            MessageBox.Show(message);
-        }
         public Clothes GetSelectedClothes()
         {
             if (dataGridView_products.SelectedRows.Count > 0)
             {
                 var selectedRow = dataGridView_products.SelectedRows[0];
-                string name = selectedRow.Cells["Name"].Value.ToString();
-                string type = selectedRow.Cells["Type"].Value.ToString();
-
-                return _presenter.Model.Clothes.FirstOrDefault(cloth => cloth.Name == name && cloth.Category == type);
+                int id = int.Parse(selectedRow.Cells["Id"].Value.ToString());
+                return _presenter.Model.Clothes.FirstOrDefault(cloth => cloth.Id == id);
             }
             else
             {
@@ -52,11 +51,14 @@ namespace StoreManagement.Views
                 return null;
             }
         }
-        
         private void Button_add_Click(object sender, EventArgs e)
         {
             MainForm mainForm = this.ParentForm as MainForm;
             mainForm?.ShowUserControl(new WorkerAddProductView(_presenter.Model));
+        }
+        private void Button_delete_Click(object sender, EventArgs e)
+        {
+            DeleteClothes?.Invoke(this, EventArgs.Empty);
         }
         private void Button_edit_Click(object sender, EventArgs e)
         {
@@ -67,7 +69,6 @@ namespace StoreManagement.Views
                 mainForm?.ShowUserControl(new WorkerEditProductView(_presenter.Model, selectedClothes));
             }
         }
-
         private void Button_filter_Click(object sender, EventArgs e)
         {
             string selectedType = comboBox_type.SelectedItem?.ToString();

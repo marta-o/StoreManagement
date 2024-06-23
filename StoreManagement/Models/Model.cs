@@ -19,9 +19,6 @@ namespace StoreManagement.Models
         }
         private void LoadAllData()
         {
-            /*Users = new ObservableCollection<User>(UsersRepository.LoadAllUsers());
-            Clothes = new ObservableCollection<Clothes>(ClothesRepository.LoadAllClothes());
-            Orders = new ObservableCollection<Order>(OrdersRepository.LoadAllOrders());*/
             var users = UsersRepository.LoadAllUsers();
             foreach (var user in users)
                 Users.Add(user);
@@ -43,20 +40,24 @@ namespace StoreManagement.Models
             }
             return false;
         }
+        public bool DeleteUser(User user)
+        {
+            var existingUser = Users.FirstOrDefault(o => o.Id == user.Id);
+            if (existingUser != null)
+            {
+                if (UsersRepository.DeleteUserInDB(existingUser))
+                {
+                    Users.Remove(existingUser);
+                    return true;
+                }
+            }
+            return false;
+        }
         public bool AddClothesToDB(Clothes clothes)
         {
             if (!Clothes.Contains(clothes) && ClothesRepository.AddNewClothesToDB(clothes))
             {
                 Clothes.Add(clothes);
-                return true;
-            }
-            return false;
-        }
-        public bool AddOrderToDB(Order order)
-        {
-            if (!Orders.Contains(order) && OrdersRepository.AddNewOrderToDB(order))
-            {
-                Orders.Add(order);
                 return true;
             }
             return false;
@@ -76,6 +77,28 @@ namespace StoreManagement.Models
                     existingClothes.Amount = clothes.Amount;
                     return true;
                 }
+            }
+            return false;
+        }
+        public bool DeleteClothes(Clothes clothes)
+        {
+            var existingClothes = Clothes.FirstOrDefault(o => o.Id == clothes.Id);
+            if (existingClothes != null)
+            {
+                if (ClothesRepository.DeleteClothesInDB(existingClothes))
+                {
+                    Clothes.Remove(existingClothes);
+                    return true;
+                }
+            }
+            return false;
+        }
+        public bool AddOrderToDB(Order order)
+        {
+            if (!Orders.Contains(order) && OrdersRepository.AddNewOrderToDB(order))
+            {
+                Orders.Add(order);
+                return true;
             }
             return false;
         }

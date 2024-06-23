@@ -1,4 +1,5 @@
 ﻿using StoreManagement.DAL.Entities;
+using System;
 using System.Collections.Generic;
 
 namespace StoreManagement.Views.WorkerViews
@@ -7,6 +8,7 @@ namespace StoreManagement.Views.WorkerViews
     {
         void DisplayAllClothes(List<Clothes> clothes);
         Clothes GetSelectedClothes();
+        event EventHandler DeleteClothes;
         void ShowMessage(string message);        
     }
 }

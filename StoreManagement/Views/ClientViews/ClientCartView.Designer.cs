@@ -51,14 +51,14 @@
             // label_price
             // 
             this.label_price.AutoSize = true;
-            this.label_price.BackColor = System.Drawing.Color.MediumPurple;
+            this.label_price.BackColor = System.Drawing.Color.White;
             this.label_price.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.label_price.Location = new System.Drawing.Point(1404, 508);
             this.label_price.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_price.Name = "label_price";
-            this.label_price.Size = new System.Drawing.Size(92, 37);
+            this.label_price.Size = new System.Drawing.Size(61, 37);
             this.label_price.TabIndex = 36;
-            this.label_price.Text = "PRICE";
+            this.label_price.Text = "0 zł";
             // 
             // label_cart
             // 
@@ -193,10 +193,10 @@
             // 
             // name
             // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.name.HeaderText = "NAME";
             this.name.MinimumWidth = 6;
             this.name.Name = "name";
-            this.name.Width = 160;
             // 
             // type
             // 
@@ -214,17 +214,19 @@
             // 
             // size
             // 
+            this.size.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.size.HeaderText = "SIZE";
             this.size.MinimumWidth = 6;
             this.size.Name = "size";
-            this.size.Width = 120;
+            this.size.Width = 65;
             // 
             // price
             // 
+            this.price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.price.HeaderText = "PRICE";
             this.price.MinimumWidth = 6;
             this.price.Name = "price";
-            this.price.Width = 120;
+            this.price.Width = 76;
             // 
             // ClientCartView
             // 
@@ -249,6 +251,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_cart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
